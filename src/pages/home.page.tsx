@@ -42,9 +42,9 @@ const featuredProjects = [
     id: 1,
     title: "UniMind AI",
     description:
-      "A full-stack depression detection solution built with React, Node.js, and MongoDB with fine-tined AI model",
-    image: "/api/placeholder/400/200",
-    tags: ["React", "Node.js", "MongoDB", "Express Js", "GPT-3.5 Turbo"],
+      "UniMind AI Web Application is an MVP product that leverages GPT-3.5 for advanced AI-driven solutions. Built with MERN Stack, React, + Vite for a high-performancefrontend, it uses Express.js for a robust backend and Tailwind CSS for a sleek,responsive UI.",
+    image: "src/assets/projectUnimind.png",
+    tags: ["React", "MongoDB", "Express Js", "GPT-3.5 Turbo"],
     github: "https://github.com/example/project1",
     demo: "https://example.com/demo1",
   },
@@ -52,18 +52,19 @@ const featuredProjects = [
     id: 2,
     title: "Hirely AI",
     description:
-      "A full-stack hireing solution built with React, Node.js, and MongoDB",
+      "Hirely AI Web Application is an MVP product designed to streamline hiring processesusing AI. Built with MERN Stack, React, + Vite for a fast and efficient frontend, itleverages Express.js for a scalable backend and Tailwind CSS for a modern,responsive UI.",
     image: "/api/placeholder/400/200",
-    tags: ["React", "TypeScript", "Node.js", "MongoDB"],
-    github: "https://github.com/example/project2",
+    tags: ["React", "JavaScript", "Node.js", "MongoDB"],
+    github: "https://github.com/thinethwic/HirelyAI-Front-End.git",
     demo: "https://example.com/demo2",
   },
   {
     id: 3,
     title: "POS Software System",
-    description: "Interactive dashboard for data analysis and visualization",
-    image: "/api/placeholder/400/200",
-    tags: ["React", "D3.js", "Python", "FastAPI"],
+    description:
+      "POS Software System is a robust Point of Sale (POS) solution designed for efficienttransaction processing and business management. Built with C# for a powerful anduser-friendly interface,",
+    image: "src/assets/projectPOS.png",
+    tags: ["C#", "Desktop App", "POS", "ERP"],
     github: "https://github.com/example/project3",
     demo: "https://example.com/demo3",
   },
@@ -73,7 +74,7 @@ const skills = [
   {
     icon: Code,
     name: "Frontend Development",
-    description: "React, TypeScript, Tailwind CSS",
+    description: "React, TypeScript, Tailwind CSS, Shadcn UI",
   },
   {
     icon: Palette,
@@ -83,7 +84,7 @@ const skills = [
   {
     icon: Rocket,
     name: "Backend Development",
-    description: "Node.js, Python, PostgreSQL",
+    description: "Node.js, .NET ASP, Mongo DB, PHP",
   },
 ];
 
@@ -204,7 +205,7 @@ function HomePage() {
                 <motion.div key={project.id} variants={fadeInUp}>
                   <Card className="overflow-hidden hover:shadow-lg transition-shadow">
                     <div className="aspect-video bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
-                      <Code className="h-12 w-12 text-muted-foreground" />
+                      <img src={project.image} alt="" />
                     </div>
                     <CardHeader>
                       <CardTitle className="text-xl">{project.title}</CardTitle>

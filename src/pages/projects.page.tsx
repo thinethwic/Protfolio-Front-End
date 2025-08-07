@@ -38,40 +38,51 @@ const staggerContainer = {
 const projects = [
   {
     id: 1,
-    title: "E-Commerce Platform",
+    title: "UniMind AI Web Application",
     description:
-      "A full-stack e-commerce solution with React, Node.js, and MongoDB",
+      "Unimind AI is a full-stack solution with React, Node.js, and MongoDB",
     longDescription:
-      "A comprehensive e-commerce platform featuring user authentication, product catalog, shopping cart, payment processing with Stripe, order management, and admin dashboard. Built with modern technologies and best practices.",
-    image: "/api/placeholder/600/400",
-    tags: ["React", "Node.js", "MongoDB", "Stripe", "JWT"],
+      "UniMind AI Web Application is an MVP product that leverages GPT-3.5 for advancedAI-driven solutions. Built with MERN Stack, React, + Vite for a high-performance frontend, it uses Express.js for a robust backend and Tailwind CSS for a sleek,responsive UI. The platform harnesses GPT-3.5 to power features such as intelligentcontent generation, automated decision-making, and personalized user interactions,making it a cutting-edge tool for businesses and individuals.",
+    image: "/src/assets/projectUnimind.png",
+    tags: ["React", "JavaScript", "Tailwind CSS", "Shadcn UI"],
     category: "Full-Stack",
     github: "https://github.com/example/ecommerce",
     demo: "https://example.com/ecommerce-demo",
     features: [
-      "User authentication and authorization",
-      "Product catalog with search and filtering",
-      "Shopping cart and checkout process",
-      "Payment processing with Stripe",
-      "Order management system",
-      "Admin dashboard for inventory management",
+      "User authentication and authorization from Clerk",
+      "Predict depression level using a fine-tuned model",
+      "Three Step's Depression detection Tool",
       "Responsive design for mobile and desktop",
     ],
     technologies: {
-      frontend: ["React", "TypeScript", "Tailwind CSS", "Context API"],
-      backend: ["Node.js", "Express", "MongoDB", "Mongoose"],
-      tools: ["JWT", "Stripe API", "Cloudinary", "Heroku"],
+      frontend: ["React", "JavaScript", "Tailwind CSS", "Shadcn UI", "Clerk"],
+      backend: [
+        "Node.js",
+        "Express Js",
+        "MongoDB",
+        "Mongoose",
+        "Clerk Tokens",
+        "Open AI",
+      ],
+      tools: [
+        "JWT",
+        "Open AI API",
+        "MongoDB Atlas",
+        "VS Code",
+        "Figma",
+        "Claude AI",
+      ],
     },
   },
   {
     id: 2,
-    title: "Task Management App",
+    title: "Hirely AI Web Application",
     description:
-      "A collaborative task management application with real-time updates",
+      "Hirely AI is a full-stack solution with React, Node.js, and MongoDB",
     longDescription:
-      "A modern task management application built for teams to collaborate effectively. Features real-time updates, project organization, deadline tracking, and team communication tools.",
+      "Hirely AI Web Application is an MVP product designed to streamline hiring processesusing AI. Built with MERN Stack, React, + Vite for a fast and efficient frontend, it leverages Express.js for a scalable backend and Tailwind CSS for a modern,responsive UI. Also, the Open AI GPT 3.5 Turbo version is used for the AI part of this application.",
     image: "/api/placeholder/600/400",
-    tags: ["React", "TypeScript", "Socket.io", "PostgreSQL"],
+    tags: ["React", "JavaScript", "Tailwind CSS", "Shadcn UI"],
     category: "Full-Stack",
     github: "https://github.com/example/task-manager",
     demo: "https://example.com/task-demo",
@@ -226,7 +237,7 @@ function ProjectsPage() {
         <div className="aspect-video bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg flex items-center justify-center">
           <div className="text-center">
             <div className="text-6xl mb-2">🚀</div>
-            <p className="text-muted-foreground">Project Screenshot</p>
+            <img src={project.image} alt="" />
           </div>
         </div>
 
@@ -383,9 +394,7 @@ function ProjectsPage() {
                   <div className="aspect-video bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
                     <div className="text-center">
                       <div className="text-4xl mb-2">🚀</div>
-                      <p className="text-sm text-muted-foreground">
-                        Project Image
-                      </p>
+                      <img src={project.image} alt="" />
                     </div>
                   </div>
 
