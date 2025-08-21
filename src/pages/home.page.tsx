@@ -62,7 +62,7 @@ const featuredProjects = [
     id: 3,
     title: "POS Software System",
     description:
-      "POS Software System is a robust Point of Sale (POS) solution designed for efficienttransaction processing and business management. Built with C# for a powerful anduser-friendly interface,",
+      "POS Software System is a robust Point of Sale (POS) solution designed for efficient transaction processing and business management. Built with C# for a powerful anduser-friendly interface,",
     image: "src/assets/projectPOS.png",
     tags: ["C#", "Desktop App", "POS", "ERP"],
     github: "https://github.com/example/project3",
