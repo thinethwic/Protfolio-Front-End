@@ -26,7 +26,7 @@ function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="text-2xl font-bold text-primary">
-            Portfolio
+            Thineth Wick
           </Link>
 
           {/* Desktop Navigation */}
@@ -57,7 +57,11 @@ function Navigation() {
               onClick={toggleMenu}
               aria-label="Toggle menu"
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </Button>
           </div>
         </div>

@@ -35,7 +35,7 @@ const staggerContainer = {
 
 const interests = [
   { icon: Code, name: "Coding", description: "Building innovative solutions" },
-  { icon: Music, name: "Music", description: "Guitar and music production" },
+  { icon: Music, name: "Music", description: "Listing Music" },
   {
     icon: Camera,
     name: "Photography",
@@ -233,7 +233,7 @@ function AboutPage() {
               <Card className="text-center">
                 <CardContent className="pt-6">
                   <div className="text-3xl font-bold text-primary mb-2">
-                    15+
+                    10+
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Programming languages explored

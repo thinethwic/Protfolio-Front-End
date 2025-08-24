@@ -45,9 +45,8 @@ const skillCategories = {
       { name: "JavaScript", level: 95, years: 4 },
       { name: "HTML/CSS", level: 98, years: 5 },
       { name: "Tailwind CSS", level: 90, years: 2 },
-      { name: "Next.js", level: 85, years: 2 },
-      { name: "Vue.js", level: 75, years: 1 },
-      { name: "Sass/SCSS", level: 80, years: 3 },
+      { name: "Vite.js", level: 75, years: 1 },
+      { name: "WordPress", level: 80, years: 3 },
     ],
   },
   backend: {
@@ -55,12 +54,11 @@ const skillCategories = {
     icon: Server,
     skills: [
       { name: "Node.js", level: 88, years: 3 },
+      { name: "TypeScript", level: 90, years: 2 },
       { name: "Python", level: 85, years: 2 },
       { name: "Express.js", level: 90, years: 3 },
-      { name: "FastAPI", level: 80, years: 1 },
+      { name: "C# .NET", level: 80, years: 1 },
       { name: "RESTful APIs", level: 92, years: 3 },
-      { name: "GraphQL", level: 70, years: 1 },
-      { name: "Socket.io", level: 75, years: 1 },
       { name: "JWT", level: 85, years: 2 },
     ],
   },
@@ -68,11 +66,9 @@ const skillCategories = {
     title: "Databases",
     icon: Database,
     skills: [
-      { name: "PostgreSQL", level: 85, years: 2 },
+      { name: "SQL Server Managment", level: 85, years: 2 },
       { name: "MongoDB", level: 80, years: 2 },
-      { name: "Redis", level: 70, years: 1 },
       { name: "MySQL", level: 75, years: 2 },
-      { name: "Prisma ORM", level: 80, years: 1 },
       { name: "Mongoose", level: 85, years: 2 },
     ],
   },
@@ -81,13 +77,8 @@ const skillCategories = {
     icon: Palette,
     skills: [
       { name: "Git/GitHub", level: 95, years: 4 },
-      { name: "Docker", level: 80, years: 2 },
       { name: "AWS", level: 75, years: 2 },
-      { name: "Vercel", level: 90, years: 2 },
-      { name: "Heroku", level: 85, years: 2 },
-      { name: "Webpack", level: 70, years: 2 },
       { name: "Vite", level: 85, years: 1 },
-      { name: "ESLint/Prettier", level: 90, years: 3 },
     ],
   },
   design: {
@@ -95,7 +86,6 @@ const skillCategories = {
     icon: Palette,
     skills: [
       { name: "Figma", level: 85, years: 2 },
-      { name: "Adobe XD", level: 75, years: 1 },
       { name: "Responsive Design", level: 95, years: 4 },
       { name: "UI/UX Design", level: 80, years: 2 },
       { name: "Prototyping", level: 75, years: 2 },
@@ -106,35 +96,22 @@ const skillCategories = {
 
 const certifications = [
   {
-    name: "AWS Certified Developer",
-    issuer: "Amazon Web Services",
+    name: "Advanced Multimedia Web Design and Development Techniques",
+    issuer: "UCSC",
     year: "2023",
-    credentialId: "AWS-12345",
+    credentialId: "ADMTC/2023/AMWDDT/GR_03/008",
   },
   {
-    name: "React Developer Certification",
-    issuer: "Meta",
-    year: "2022",
-    credentialId: "META-67890",
-  },
-  {
-    name: "JavaScript Algorithms and Data Structures",
-    issuer: "freeCodeCamp",
-    year: "2022",
-    credentialId: "FCC-54321",
-  },
-  {
-    name: "Google UX Design Certificate",
-    issuer: "Google",
-    year: "2021",
-    credentialId: "GOOGLE-09876",
+    name: "AI Driven Full-stack Development",
+    issuer: "STEM Link",
+    year: "2024 (Pending)",
+    credentialId: "",
   },
 ];
 
 const languages = [
-  { name: "English", level: "Native" },
-  { name: "Spanish", level: "Conversational" },
-  { name: "French", level: "Basic" },
+  { name: "Sinhala", level: "Native" },
+  { name: "English", level: "Conversational" },
 ];
 
 function SkillsPage() {
@@ -361,15 +338,15 @@ function SkillsPage() {
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-primary rounded-full" />
-                      <span className="text-sm">Three.js</span>
+                      <span className="text-sm">AI/ML</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-primary rounded-full" />
-                      <span className="text-sm">Rust</span>
+                      <span className="text-sm">Block Chain</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-primary rounded-full" />
-                      <span className="text-sm">Kubernetes</span>
+                      <span className="text-sm">Docker/Kubernates</span>
                     </div>
                   </div>
                 </CardContent>
