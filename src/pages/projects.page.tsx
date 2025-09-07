@@ -216,7 +216,7 @@ const projects = [
       "As part of this project, we set out to create a fully functional responsive website for BeanStack, a fictional coffee shop that prioritized user experience. The website was designed to be user-friendly, allowing customers to easily browse the menu and access information about the shop, and place orders online.",
     image: "/api/placeholder/600/400",
     tags: ["ASP.NET", "C#", "MVC", "Tailwind CSS"],
-    category: "Full-Stack ",
+    category: "Full-Stack",
     github: "https://github.com/example/blog-platform",
     demo: "https://example.com/blog-demo",
     features: [
