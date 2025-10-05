@@ -1,0 +1,9 @@
+services:
+  my-portfolio:
+      build:
+        context: . 
+        target: prod
+      ports:
+        - "80:80"
+      environment:
+        - NODE_ENVIROMENT=productionw
