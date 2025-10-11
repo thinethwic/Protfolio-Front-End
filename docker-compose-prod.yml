@@ -6,4 +6,4 @@ services:
       ports:
         - "80:80"
       environment:
-        - NODE_ENVIROMENT=productionw
+        - NODE_ENVIROMENT=production
