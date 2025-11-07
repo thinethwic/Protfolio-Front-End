@@ -7,7 +7,7 @@ function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-8">
             <p className="text-sm text-muted-foreground">
-              © 2024 Thineth Wickramarachchi. All rights reserved.
+              © 2025 Thineth Wickramarachchi. All rights reserved.
             </p>
             <div className="flex items-center space-x-4">
               <a
@@ -48,7 +48,7 @@ function Footer() {
           </div>
           <div className="mt-4 md:mt-0">
             <p className="text-sm text-muted-foreground">
-              Built with React, TypeScript & Tailwind CSS
+              Built with React & Tailwind CSS
             </p>
           </div>
         </div>
