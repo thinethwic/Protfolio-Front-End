@@ -43,7 +43,8 @@ const featuredProjects = [
     title: "UniMind AI",
     description:
       "UniMind AI Web Application is an MVP product that leverages GPT-3.5 for advanced AI-driven solutions. Built with MERN Stack, React, + Vite for a high-performancefrontend, it uses Express.js for a robust backend and Tailwind CSS for a sleek,responsive UI.",
-    image: "src/assets/projectUnimind.png",
+    image:
+      "https://storage.cloud.google.com/portfolio_thineth/projectUnimind.png",
     tags: ["React", "MongoDB", "Express Js", "GPT-3.5 Turbo"],
     github: "https://github.com/example/project1",
     demo: "https://example.com/demo1",
@@ -63,7 +64,7 @@ const featuredProjects = [
     title: "POS Software System",
     description:
       "POS Software System is a robust Point of Sale (POS) solution designed for efficient transaction processing and business management. Built with C# for a powerful anduser-friendly interface,",
-    image: "src/assets/projectPOS.png",
+    image: "https://storage.cloud.google.com/portfolio_thineth/projectPOS.png",
     tags: ["C#", "Desktop App", "POS", "ERP"],
     github: "https://github.com/example/project3",
     demo: "https://example.com/demo3",

@@ -70,6 +70,8 @@ const values = [
 ];
 
 function AboutPage() {
+  const directAvatarUrl =
+    "https://storage.cloud.google.com/portfolio_thineth/Thinethprofile.jpg";
   const downloadResume = () => {
     // In a real app, this would trigger a download of your actual resume
     const link = document.createElement("a");
@@ -90,7 +92,7 @@ function AboutPage() {
           {/* Hero Section */}
           <motion.section variants={fadeInUp} className="text-center mb-20">
             <Avatar className="w-40 h-40 mx-auto mb-8">
-              <AvatarImage src="src\assets\Thinethprofile.jpg" alt="Profile" />
+              <AvatarImage src={directAvatarUrl} alt="Profile" />
               <AvatarFallback>TW</AvatarFallback>
             </Avatar>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">About Me</h1>

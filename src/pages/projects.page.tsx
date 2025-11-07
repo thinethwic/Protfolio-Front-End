@@ -43,7 +43,8 @@ const projects = [
       "Unimind AI is a full-stack solution with React, Node.js, and MongoDB",
     longDescription:
       "UniMind AI Web Application is an MVP product that leverages GPT-3.5 for advancedAI-driven solutions. Built with MERN Stack, React, + Vite for a high-performance frontend, it uses Express.js for a robust backend and Tailwind CSS for a sleek,responsive UI. The platform harnesses GPT-3.5 to power features such as intelligentcontent generation, automated decision-making, and personalized user interactions,making it a cutting-edge tool for businesses and individuals.",
-    image: "/src/assets/projectUnimind.png",
+    image:
+      "https://storage.cloud.google.com/portfolio_thineth/projectUnimind.png",
     tags: ["React", "JavaScript", "Tailwind CSS", "Shadcn UI"],
     category: "Full-Stack",
     github: "https://github.com/example/ecommerce",
@@ -106,7 +107,7 @@ const projects = [
       "POS Software System is a robust Point of Sale (POS) solution designed for efficient transaction processing and business management",
     longDescription:
       "POS Software System is a robust Point of Sale (POS) solution designed for efficient transaction processing and business management. Built with C# for a powerful anduser-friendly interface, it utilizes SQL Database for secure and scalable data storage.The system streamlines sales, inventory management, and reporting, making it idealfor retail and hospitality businessesHirely",
-    image: "src/assets/projectPOS.png",
+    image: "https://storage.cloud.google.com/portfolio_thineth/projectPOS.png",
     tags: ["C#", "POS", "SQL", "Database Mangment Studio", "Figma"],
     category: "Desktop",
     github: "https://github.com/example/data-viz",
