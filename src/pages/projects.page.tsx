@@ -47,7 +47,7 @@ const projects = [
       "https://storage.googleapis.com/portfolio_thineth/projectUnimind.png",
     tags: ["React", "JavaScript", "Tailwind CSS", "Shadcn UI"],
     category: "Full-Stack",
-    github: "https://github.com/example/ecommerce",
+    github: "https://github.com/thinethwic/Mini-Project-Front-End.git",
     demo: "https://example.com/ecommerce-demo",
     features: [
       "Implemented a Node.js backend with TypeScript and MongoDB.",
@@ -66,14 +66,7 @@ const projects = [
         "Clerk Tokens",
         "Open AI",
       ],
-      tools: [
-        "JWT",
-        "Open AI API",
-        "MongoDB Atlas",
-        "VS Code",
-        "Figma",
-        "Claude AI",
-      ],
+      tools: ["JWT", "Open AI API", "MongoDB Atlas", "VS Code", "Figma"],
     },
   },
   {
@@ -86,7 +79,7 @@ const projects = [
     image: "/api/placeholder/600/400",
     tags: ["React", "JavaScript", "Tailwind CSS", "Shadcn UI"],
     category: "Full-Stack",
-    github: "https://github.com/example/task-manager",
+    github: "https://github.com/thinethwic/HirelyAI-Front-End.git",
     demo: "https://example.com/task-demo",
     features: [
       "Implemented a Node.js backend with TypeScript and MongoDB",
@@ -136,8 +129,8 @@ const projects = [
     image: "/api/placeholder/600/400",
     tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
     category: "Frontend",
-    github: "https://github.com/example/portfolio",
-    demo: "https://example.com/portfolio-demo",
+    github: "https://github.com/thinethwic/Protfolio-Front-End.git",
+    demo: "https://thinethwic.netlify.app/",
     features: [
       "Responsive design for all devices",
       "Dark/light theme toggle",

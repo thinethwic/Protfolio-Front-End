@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import TypingHeading from "@/components/shared/TypingHeading";
 
 // Animation variants
 const fadeInUp = {
@@ -92,6 +93,16 @@ const skills = [
 function HomePage() {
   const directAvatarUrl =
     "https://storage.googleapis.com/portfolio_thineth/Thinethprofile.jpg";
+
+  const downloadResume = () => {
+    // In a real app, this would trigger a download of your actual resume
+    const link = document.createElement("a");
+    link.href =
+      "https://storage.cloud.google.com/portfolio_thineth/Thineth%20CV.pdf"; // Replace with actual resume file path
+    link.download = "Thineth CV.pdf";
+    link.click();
+  };
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -110,12 +121,7 @@ function HomePage() {
               </Avatar>
             </motion.div>
 
-            <motion.h1
-              variants={fadeInUp}
-              className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
-            >
-              Hi, I'm Thineth Wickramarchchi
-            </motion.h1>
+            <TypingHeading />
 
             <motion.p
               variants={fadeInUp}
@@ -134,9 +140,14 @@ function HomePage() {
                   View My Work <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button variant="outline" size="lg" className="text-lg">
+              <Button
+                onClick={downloadResume}
+                variant="outline"
+                size="lg"
+                className="text-lg"
+              >
                 <Download className="mr-2 h-5 w-5" />
-                <Link to="/about">Download Resume</Link>
+                Download Resume
               </Button>
             </motion.div>
           </motion.div>

@@ -98,6 +98,12 @@ const skillCategories = {
 
 const certifications = [
   {
+    name: "Introduction to Large Language Model",
+    issuer: "Google",
+    year: "Nov 2025",
+    credentialId: "20002830",
+  },
+  {
     name: "Introduction to Generative AI",
     issuer: "Google",
     year: "Oct 2025",
