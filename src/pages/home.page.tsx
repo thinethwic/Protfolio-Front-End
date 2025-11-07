@@ -136,7 +136,7 @@ function HomePage() {
               </Button>
               <Button variant="outline" size="lg" className="text-lg">
                 <Download className="mr-2 h-5 w-5" />
-                Download Resume
+                <Link to="/about">Download Resume</Link>
               </Button>
             </motion.div>
           </motion.div>
