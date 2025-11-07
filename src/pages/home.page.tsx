@@ -85,7 +85,7 @@ const skills = [
   {
     icon: Rocket,
     name: "Backend Development",
-    description: "Node.js, .NET ASP, Mongo DB, PHP",
+    description: "Node.js, .NET ASP, Mongo DB, Spring Boot",
   },
 ];
 
