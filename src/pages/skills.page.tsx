@@ -18,6 +18,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Link } from "react-router-dom";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -96,6 +97,12 @@ const skillCategories = {
 };
 
 const certifications = [
+  {
+    name: "Introduction to Generative AI",
+    issuer: "Google",
+    year: "Oct 2025",
+    credentialId: "19205416",
+  },
   {
     name: "Advanced Multimedia Web Design and Development Techniques",
     issuer: "UCSC",
@@ -335,7 +342,7 @@ function SkillsPage() {
                   <div className="space-y-3">
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-primary rounded-full" />
-                      <span className="text-sm">React Native</span>
+                      <span className="text-sm">Spring Boot</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-primary rounded-full" />
@@ -343,7 +350,7 @@ function SkillsPage() {
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-primary rounded-full" />
-                      <span className="text-sm">Block Chain</span>
+                      <span className="text-sm">BlockChain</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-primary rounded-full" />
@@ -366,18 +373,18 @@ function SkillsPage() {
                 technologies. Let's build something amazing together!
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="/contact"
+                <Link
+                  to="/contact"
                   className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
                 >
                   Get In Touch
-                </a>
-                <a
-                  href="/projects"
+                </Link>
+                <Link
+                  to="/projects"
                   className="inline-flex items-center justify-center px-6 py-3 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md transition-colors"
                 >
                   View My Work
-                </a>
+                </Link>
               </div>
             </div>
           </motion.section>

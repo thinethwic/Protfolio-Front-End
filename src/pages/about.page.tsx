@@ -71,7 +71,7 @@ const values = [
 
 function AboutPage() {
   const directAvatarUrl =
-    "https://storage.cloud.google.com/portfolio_thineth/Thinethprofile.jpg";
+    "https://storage.googleapis.com/portfolio_thineth/Thinethprofile.jpg";
   const downloadResume = () => {
     // In a real app, this would trigger a download of your actual resume
     const link = document.createElement("a");

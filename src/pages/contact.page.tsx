@@ -74,7 +74,7 @@ const socialLinks = [
   {
     name: "LinkedIn",
     icon: Linkedin,
-    href: "www.linkedin.com/thineth-wick",
+    href: "www.linkedin.com/in/thineth-wick",
     description: "Professional network",
   },
   {
