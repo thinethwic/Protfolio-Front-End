@@ -47,7 +47,7 @@ const featuredProjects = [
     image:
       "https://storage.googleapis.com/portfolio_thineth/projectUnimind.png",
     tags: ["React", "MongoDB", "Express Js", "GPT-3.5 Turbo"],
-    github: "https://github.com/example/project1",
+    github: "https://github.com/thinethwic/Mini-Project-Front-End.git",
     demo: "https://example.com/demo1",
   },
   {
