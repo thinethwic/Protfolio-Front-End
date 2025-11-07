@@ -53,6 +53,7 @@ const skillCategories = {
     title: "Backend Development",
     icon: Server,
     skills: [
+      { name: "Spring boot", level: 10 },
       { name: "Node.js", level: 88, years: 3 },
       { name: "TypeScript", level: 90, years: 2 },
       { name: "Python", level: 85, years: 2 },

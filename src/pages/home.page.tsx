@@ -89,6 +89,8 @@ const skills = [
 ];
 
 function HomePage() {
+  const directAvatarUrl =
+    "https://storage.cloud.google.com/portfolio_thineth/Thinethprofile.jpg";
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -102,10 +104,7 @@ function HomePage() {
           >
             <motion.div variants={fadeInUp} className="mb-8">
               <Avatar className="w-32 h-32 mx-auto mb-6">
-                <AvatarImage
-                  src="src\assets\Thinethprofile.jpg"
-                  alt="Profile"
-                />
+                <AvatarImage src={directAvatarUrl} alt="Profile" />
                 <AvatarFallback>TW</AvatarFallback>
               </Avatar>
             </motion.div>

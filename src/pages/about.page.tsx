@@ -73,7 +73,8 @@ function AboutPage() {
   const downloadResume = () => {
     // In a real app, this would trigger a download of your actual resume
     const link = document.createElement("a");
-    link.href = "src/assets/Thineth New CV (1).pdf"; // Replace with actual resume file path
+    link.href =
+      "https://storage.cloud.google.com/portfolio_thineth/Thineth%20CV.pdf"; // Replace with actual resume file path
     link.download = "Thineth CV.pdf";
     link.click();
   };
