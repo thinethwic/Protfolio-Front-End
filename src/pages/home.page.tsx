@@ -12,7 +12,6 @@ import {
   Sparkles,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import TypingHeading from "@/components/shared/TypingHeading";
@@ -36,8 +35,8 @@ const socialIconMap = {
 function HomePage() {
   const featuredProjects = siteData.projects.filter((project) =>
     new Set(siteData.home.featuredProjectsSection.projectIds).has(
-      project.id as 1 | 2 | 3
-    )
+      project.id as 1 | 2 | 3,
+    ),
   );
 
   const downloadResume = () => {
@@ -49,7 +48,7 @@ function HomePage() {
 
   return (
     <div className="pb-20">
-      <section className="section-shell relative pt-10 sm:pt-16">
+      <section className="section-shell relative pt-6 sm:pt-8">
         <div className="grid gap-12 lg:grid-cols-[1fr_0.95fr] lg:items-center">
           <div className="relative">
             <Reveal className="space-y-8">
@@ -78,7 +77,9 @@ function HomePage() {
                     <a
                       key={social.name}
                       href={social.href}
-                      target={social.href.startsWith("http") ? "_blank" : undefined}
+                      target={
+                        social.href.startsWith("http") ? "_blank" : undefined
+                      }
                       rel={
                         social.href.startsWith("http")
                           ? "noopener noreferrer"
@@ -93,17 +94,6 @@ function HomePage() {
                 })}
               </div>
             </Reveal>
-
-            <motion.div
-              animate={{ y: [0, -14, 0] }}
-              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -left-4 top-8 hidden rounded-2xl border border-black/8 bg-white/80 px-4 py-3 text-sm text-sky-950 shadow-[0_16px_40px_rgba(15,23,42,0.14)] backdrop-blur-xl xl:block dark:border-white/10 dark:bg-white/[0.04] dark:text-sky-100 dark:shadow-[0_14px_50px_rgba(6,10,24,0.32)]"
-            >
-              <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-sky-700/70 dark:text-sky-200/70">
-                Shipping
-              </p>
-              <p className="mt-2 font-medium">Interfaces that feel precise</p>
-            </motion.div>
           </div>
 
           <Reveal delay={0.1} className="relative">
@@ -171,17 +161,20 @@ function HomePage() {
                       </div>
                     </div>
                     <div className="flex flex-wrap gap-2">
-                      {["React", "TypeScript", "Framer Motion", "Tailwind CSS"].map(
-                        (tag) => (
-                          <Badge
-                            key={tag}
-                            variant="secondary"
-                            className="rounded-full border border-black/6 bg-black/[0.03] px-3 py-1 text-foreground/75 dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-200"
-                          >
-                            {tag}
-                          </Badge>
-                        )
-                      )}
+                      {[
+                        "React",
+                        "TypeScript",
+                        "Framer Motion",
+                        "Tailwind CSS",
+                      ].map((tag) => (
+                        <Badge
+                          key={tag}
+                          variant="secondary"
+                          className="rounded-full border border-black/6 bg-black/[0.03] px-3 py-1 text-foreground/75 dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-200"
+                        >
+                          {tag}
+                        </Badge>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -245,12 +238,20 @@ function HomePage() {
                     </Badge>
                     <div className="flex gap-2">
                       <Button variant="ghost" size="icon" asChild>
-                        <a href={project.github} target="_blank" rel="noopener noreferrer">
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <Github className="h-4 w-4" />
                         </a>
                       </Button>
                       <Button variant="ghost" size="icon" asChild>
-                        <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                        <a
+                          href={project.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <ExternalLink className="h-4 w-4" />
                         </a>
                       </Button>

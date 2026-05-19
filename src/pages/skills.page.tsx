@@ -1,4 +1,11 @@
-import { Award, Code2, Database, Palette, Server, Sparkles } from "lucide-react";
+import {
+  Award,
+  Code2,
+  Database,
+  Palette,
+  Server,
+  Sparkles,
+} from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import Reveal from "@/components/shared/Reveal";
@@ -11,6 +18,68 @@ const categoryIcons = {
   database: Database,
   palette: Palette,
 };
+
+const skillLogoMap: Record<string, string> = {
+  React: "https://cdn.simpleicons.org/react/61DAFB",
+  TypeScript: "https://cdn.simpleicons.org/typescript/3178C6",
+  JavaScript: "https://cdn.simpleicons.org/javascript/F7DF1E",
+  "HTML/CSS": "https://cdn.simpleicons.org/html5/E34F26",
+  "Tailwind CSS": "https://cdn.simpleicons.org/tailwindcss/06B6D4",
+  "Vite.js": "https://cdn.simpleicons.org/vite/646CFF",
+  WordPress: "https://cdn.simpleicons.org/wordpress/21759B",
+  "Spring Boot": "https://cdn.simpleicons.org/springboot/6DB33F",
+  "Node.js": "https://cdn.simpleicons.org/nodedotjs/5FA04E",
+  Python: "https://cdn.simpleicons.org/python/3776AB",
+  "Express.js": "https://cdn.simpleicons.org/express/000000",
+  "C# .NET": "https://cdn.simpleicons.org/dotnet/512BD4",
+  "RESTful APIs": "https://cdn.simpleicons.org/postman/FF6C37",
+  JWT: "https://cdn.simpleicons.org/jsonwebtokens/000000",
+  "SQL Server Management":
+    "https://img.icons8.com/?size=100&id=laYYF3dV0Iew&format=png&color=000000",
+  MongoDB: "https://cdn.simpleicons.org/mongodb/47A248",
+  MySQL: "https://cdn.simpleicons.org/mysql/4479A1",
+  Mongoose: "https://cdn.simpleicons.org/mongodb/47A248",
+  "Git/GitHub": "https://cdn.simpleicons.org/github/181717",
+  AWS: "https://img.icons8.com/?size=100&id=33039&format=png&color=000000",
+  Vite: "https://cdn.simpleicons.org/vite/646CFF",
+  Figma: "https://cdn.simpleicons.org/figma/F24E1E",
+  "Responsive Design": "https://cdn.simpleicons.org/css/1572B6",
+  "UI/UX Design": "https://cdn.simpleicons.org/framer/0055FF",
+  Prototyping: "https://cdn.simpleicons.org/framer/0055FF",
+  "User Research": "https://cdn.simpleicons.org/notion/000000",
+  PostgreSQL:
+    "https://img.icons8.com/?size=100&id=JRnxU7ZWP4mi&format=png&color=000000",
+};
+
+function SkillLogo({ skillName }: { skillName: string }) {
+  const logoUrl = skillLogoMap[skillName];
+  const fallbackLabel = skillName
+    .split(/[\s/.+-]+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0]?.toUpperCase())
+    .join("");
+
+  if (!logoUrl) {
+    return (
+      <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-black/6 bg-white/80 text-xs font-semibold text-foreground/75 dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-200">
+        {fallbackLabel}
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-black/6 bg-white/80 p-2 shadow-[0_8px_20px_rgba(15,23,42,0.06)] dark:border-white/10 dark:bg-white/[0.06] dark:shadow-none">
+      <img
+        src={logoUrl}
+        alt={`${skillName} logo`}
+        className="h-6 w-6 object-contain"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+  );
+}
 
 function SkillsPage() {
   const categories = Object.entries(siteData.skillCategories);
@@ -49,19 +118,32 @@ function SkillsPage() {
 
                   <div className="mt-8 space-y-5">
                     {category.skills.map((skill) => (
-                      <div key={skill.name} className="rounded-[24px] border border-black/6 bg-black/[0.03] p-4 dark:border-white/8 dark:bg-black/20">
+                      <div
+                        key={skill.name}
+                        className="rounded-[24px] border border-black/6 bg-black/[0.03] p-4 dark:border-white/8 dark:bg-black/20"
+                      >
                         <div className="mb-3 flex items-center justify-between gap-4">
-                          <div>
-                            <p className="font-medium text-foreground dark:text-white">{skill.name}</p>
-                            <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">
-                              {skill.years ?? 0} years
-                            </p>
+                          <div className="flex items-center gap-4">
+                            <SkillLogo skillName={skill.name} />
+                            <div>
+                              <p className="font-medium text-foreground dark:text-white">
+                                {skill.name}
+                              </p>
+                              <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">
+                                {skill.years ?? 0} years
+                              </p>
+                            </div>
                           </div>
-                          <span className="text-sm font-medium text-sky-200">
+                          <span className="text-sm font-medium text-sky-600 dark:text-sky-200">
                             {skill.level}%
                           </span>
                         </div>
-                        <Progress value={skill.level} className="h-2 bg-white/[0.06]" />
+                        <div className="pl-0 sm:pl-[3.75rem]">
+                          <Progress
+                            value={skill.level}
+                            className="h-2 bg-black/[0.06] dark:bg-white/[0.06]"
+                          />
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -84,7 +166,7 @@ function SkillsPage() {
               <Reveal key={cert.name} delay={index * 0.06}>
                 <div className="glass-panel rounded-[28px] p-5">
                   <div className="flex items-start gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sky-400/10 text-sky-200">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sky-400/10 text-sky-600 dark:text-sky-200">
                       <Award className="h-5 w-5" />
                     </div>
                     <div className="flex-1">
@@ -96,7 +178,9 @@ function SkillsPage() {
                           {cert.year}
                         </Badge>
                       </div>
-                      <p className="mt-2 text-sm text-muted-foreground">{cert.issuer}</p>
+                      <p className="mt-2 text-sm text-muted-foreground">
+                        {cert.issuer}
+                      </p>
                       <p className="mt-3 font-mono text-xs uppercase tracking-[0.22em] text-slate-500">
                         Credential {cert.credentialId || "Pending"}
                       </p>

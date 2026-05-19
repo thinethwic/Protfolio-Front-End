@@ -168,13 +168,14 @@ export const siteData = {
   about: {
     title: "About Me",
     summary:
-      "I'm a passionate full-stack developer with a love for creating beautiful, functional web applications that make a difference in people's lives.",
+      "I'm a motivated full-stack developer and software engineering intern specializing in Java Spring Boot backend engineering and MERN stack development, passionate about building secure, scalable, and data-driven web applications.",
     journeyTitle: "My Journey",
     journeyParagraphs: [
-      "My journey into web development began during my computer science studies, where I discovered my passion for creating digital solutions that solve real-world problems. What started as curiosity about how websites work has evolved into a career dedicated to crafting exceptional user experiences.",
-      "Over the years, I've had the privilege of working on diverse projects, from e-commerce platforms to data visualization tools. Each project has taught me valuable lessons about the importance of user-centered design, clean code, and effective collaboration.",
-      "When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing my knowledge through blog posts and mentoring. I believe in the power of community and continuous learning to drive innovation in our field.",
+      "My journey into software development began during my BHSc (Hons) in Health Information and Communication Technology at Gampaha Wickramarachchi University, where I discovered a deep passion for building digital solutions that solve real-world problems. What started as curiosity about how web applications work has grown into hands-on experience with full-stack development, from designing databases at the Negombo Municipal Council to engineering enterprise-grade backend systems with Java Spring Boot.",
+      "Over the years I've worked across a range of meaningful projects — from AI-powered hiring platforms and mentoring marketplaces to company intranet systems and asset management tools. Each project has sharpened my understanding of secure authentication, role-based access control, clean API design, and scalable architecture. I've had the privilege of applying these skills professionally as a Software Engineering Intern at CIC Feeds (Pvt) Ltd, where I'm currently building and maintaining internal web solutions used across the organisation.",
+      "Beyond work, I co-authored a research paper on AI-driven early detection of depression published at the Lincoln International Multidisciplinary Conference 2024, and served as the Founding President of the Technological Advancement Society at my university. I'm continuously deepening my expertise through certifications in Java Spring Boot, AI & Machine Learning, and full-stack development — driven by a belief that technology, when built thoughtfully, can genuinely improve lives.",
     ],
+
     valuesSection: {
       title: "Core Values",
       description:
@@ -263,216 +264,137 @@ export const siteData = {
   projects: [
     {
       id: 1,
-      title: "CIC Intranet Web Application",
+      title: "CIC Intranet System",
       description:
-        "Unimind AI is a full-stack solution with React, Node.js, and MongoDB",
+        "An integrated Company Intranet and Help Desk platform with role-based access and a full ticketing system.",
       longDescription:
-        "UniMind AI Web Application is an MVP product that leverages GPT-3.5 for advanced AI-driven solutions. Built with MERN Stack, React, and Vite for a high-performance frontend, it uses Express.js for a robust backend and Tailwind CSS for a sleek, responsive UI. The platform harnesses GPT-3.5 to power features such as intelligent content generation, automated decision-making, and personalized user interactions, making it a cutting-edge tool for businesses and individuals.",
-      image:
-        "https://storage.googleapis.com/portfolio_thineth/projectUnimind.png",
-      tags: ["React", "JavaScript", "Tailwind CSS", "Shadcn UI"],
+        "Designing and developing an integrated Company Intranet and Help Desk platform featuring department-wise authentication, role-based access control, and a full ticketing system. Employees can raise support tickets that automatically trigger email notifications to the relevant department HOD, with Google Cloud-backed file storage for secure document management. Built with React + Vite, Tailwind CSS, Java Spring Boot, Spring Security, and JWT — currently in the final development phase.",
+      image: "https://storage.googleapis.com/portfolio_thineth/CIC_Intranet.png",
+      tags: ["React", "Java Spring Boot", "JWT", "Google Cloud"],
       category: "Full-Stack",
-      github: "https://github.com/thinethwic/Mini-Project-Front-End.git",
-      demo: "https://example.com/ecommerce-demo",
+      github: "",
+      demo: "",
       features: [
-        "Implemented a Node.js backend with TypeScript and MongoDB.",
-        "User authentication and authorization from Clerk",
-        "Predict depression level using a fine-tuned model",
-        "Three-step depression detection tool",
-        "Responsive design for mobile and desktop with React.js",
+        "Department-wise authentication and role-based access control",
+        "Full ticketing system with automatic email notifications to department HODs",
+        "Google Cloud-backed file storage for secure document management",
+        "Built with React + Vite frontend and Java Spring Boot backend",
+        "Secured with Spring Security and JWT",
       ],
       technologies: {
-        frontend: ["React", "TypeScript", "Tailwind CSS", "Shadcn UI"],
-        backend: [
-          "Java Spring Boot",
-          "Spring Security",
-          "Hibernate",
-          "Post",
-          "PostgreSQL",
-        ],
-        tools: ["VS Code", "Figma", "PgAdmin", "Intellij"],
+        frontend: ["React", "Vite", "Tailwind CSS"],
+        backend: ["Java Spring Boot", "Spring Security", "JWT"],
+        tools: ["Google Cloud", "VS Code", "IntelliJ", "Postman"],
       },
     },
     {
       id: 2,
-      title: "Inventory Mangement System - IT Assets",
+      title: "Enterprise Asset Management Inventory System",
       description:
-        "Inventory Management System – IT Assets",
+        "A full-stack IT asset management system with location-based authentication and real-time asset tracking.",
       longDescription:
-        "My client needed a centralised system to track and manage their organisation's IT assets — from hardware devices to software licenses — replacing messy spreadsheets with a reliable, role-based web platform.",
-      image:
-        "https://storage.googleapis.com/portfolio_thineth/3.png",
-      tags: ["React", "JavaScript", "Tailwind CSS", "Shadcn UI"],
+        "Designed and developed a full-stack Enterprise Asset Management Inventory System featuring location-based authentication, role-based access control, and real-time asset tracking across multiple branches. Built with React + Vite, Tailwind CSS, Java Spring Boot, Spring Security, and JWT — enforcing geo-restricted logins and role-scoped API permissions to prevent unauthorized cross-location operations.",
+      image: "https://storage.googleapis.com/portfolio_thineth/3.png",
+      tags: ["React", "Java Spring Boot", "PostgreSQL", "Clerk"],
       category: "Full-Stack",
-      github: "https://github.com/thinethwic/Mini-Project-Front-End.git",
-      demo: "https://example.com/ecommerce-demo",
+      github: "https://github.com/thinethwic/cic-inventory-front-end.git",
+      demo: "https://cicinventory.netlify.app/",
       features: [
-        "Implemented a Node.js backend with TypeScript and MongoDB.",
-        "User authentication and authorization from Clerk",
-        "Predict depression level using a fine-tuned model",
-        "Three-step depression detection tool",
-        "Responsive design for mobile and desktop with React.js",
+        "Location-based authentication with geo-restricted logins",
+        "Role-based access control and role-scoped API permissions",
+        "Real-time asset tracking across multiple branches",
+        "Prevents unauthorized cross-location operations",
+        "Clerk authentication integrated with Spring Security and JWT",
       ],
       technologies: {
-        frontend: ["React", "TypeScript", "Tailwind CSS", "Shadcn UI"],
-        backend: [
-          "Java Spring Boot",
-          "Spring Security",
-          "Hibernate",
-          "Post",
-          "PostgreSQL",
-        ],
-        tools: ["VS Code", "Figma", "PgAdmin", "Intellij"],
+        frontend: ["React", "Vite", "Tailwind CSS"],
+        backend: ["Java Spring Boot", "Spring Security", "JWT", "PostgreSQL"],
+        tools: ["Clerk", "PgAdmin", "IntelliJ", "Postman", "Figma"],
       },
     },
     {
       id: 3,
-      title: "SkillMentor - WebApp for Find Your Mentor",
+      title: "SkillMentor – Online Mentoring Platform",
       description:
-        "SkillMentor – Full-Stack Online Mentoring Platform",
+        "A full-stack mentoring marketplace connecting students with expert mentors for personalised one-on-one sessions.",
       longDescription:
-        "My client needed a complete mentoring platform — a marketplace where students discover expert mentors, book sessions, and track learning progress, backed by a full admin system.",
-      image:
-        "https://storage.googleapis.com/portfolio_thineth/Skill-Mentor.png",
-      tags: ["React", "TypeScript", "Tailwind CSS", "Shadcn UI"],
+        "Designed and developed SkillMentor, a full-stack online mentoring platform connecting students with expert mentors for personalised one-on-one sessions. Features include mentor discovery with rich profiles and student reviews, a smart booking system with double-booking prevention and real-time status tracking, and a complete admin dashboard with role-based access control for mentor management, subject oversight, and payment confirmation. Secured with JWT-based Clerk authentication, enforcing distinct Student and Admin roles across frontend and backend. Deployed live on Vercel and Render.",
+      image: "https://storage.googleapis.com/portfolio_thineth/Skill-Mentor.png",
+      tags: ["React", "TypeScript", "Java Spring Boot", "PostgreSQL"],
       category: "Full-Stack",
-      github: "https://skillmentor-frontend-zeta.vercel.app/",
-      demo: "https://github.com/thinethwic/skillmentor-platform.git",
+      github: "https://github.com/thinethwic/skillmentor-platform",
+      demo: "https://skillmentor-frontend-zeta.vercel.app/",
       features: [
-        "Implemented a Node.js backend with TypeScript and MongoDB.",
-        "User authentication and authorization from Clerk",
-        "Predict depression level using a fine-tuned model",
-        "Three-step depression detection tool",
-        "Responsive design for mobile and desktop with React.js",
+        "Mentor discovery with rich profiles and student reviews",
+        "Smart booking system with double-booking prevention and real-time status tracking",
+        "Complete admin dashboard for mentor management, subject oversight, and payment confirmation",
+        "JWT-based Clerk authentication with distinct Student and Admin roles",
+        "Deployed live on Vercel and Render",
       ],
       technologies: {
-        frontend: ["React", "TypeScript", "Tailwind CSS", "Shadcn UI"],
-        backend: [
-          "Java Spring Boot",
-          "Spring Security",
-          "Hibernate",
-          "Post",
-          "PostgreSQL",
-        ],
-        tools: ["VS Code", "Figma", "PgAdmin", "Intellij"],
+        frontend: ["React", "TypeScript", "Vite", "Tailwind CSS", "Shadcn UI", "React Hook Form", "Zod"],
+        backend: ["Java Spring Boot", "PostgreSQL", "Clerk"],
+        tools: ["JWT", "IntelliJ", "VS Code", "Figma", "Postman"],
       },
     },
     {
       id: 4,
       title: "UniMind AI Web Application",
       description:
-        "Unimind AI is a full-stack solution with React, Node.js, and MongoDB",
+        "A MERN stack MVP leveraging GPT-3.5 Turbo for intelligent content generation and AI-driven interactions.",
       longDescription:
-        "UniMind AI Web Application is an MVP product that leverages GPT-3.5 for advanced AI-driven solutions. Built with MERN Stack, React, and Vite for a high-performance frontend, it uses Express.js for a robust backend and Tailwind CSS for a sleek, responsive UI. The platform harnesses GPT-3.5 to power features such as intelligent content generation, automated decision-making, and personalized user interactions, making it a cutting-edge tool for businesses and individuals.",
-      image:
-        "https://storage.googleapis.com/portfolio_thineth/projectUnimind.png",
-      tags: ["React", "JavaScript", "Tailwind CSS", "Shadcn UI"],
+        "UniMind AI Web Application is an MVP product that leverages GPT-3.5 Turbo for advanced AI-driven solutions. Built with MERN Stack, React, and Vite for a high-performance frontend, it uses Express.js for a robust backend and Tailwind CSS for a sleek, responsive UI. The platform harnesses GPT-3.5 Turbo to power features such as intelligent content generation, automated decision-making, and personalized user interactions, making it a cutting-edge tool for businesses and individuals.",
+      image: "https://storage.googleapis.com/portfolio_thineth/Skill%20Mentor%20Web%20App%20-%20Fiverr.png",
+      tags: ["React", "Node.js", "MongoDB", "OpenAI"],
       category: "Full-Stack",
       github: "https://github.com/thinethwic/Mini-Project-Front-End.git",
-      demo: "https://example.com/ecommerce-demo",
+      demo: "",
       features: [
-        "Implemented a Node.js backend with TypeScript and MongoDB.",
-        "User authentication and authorization from Clerk",
-        "Predict depression level using a fine-tuned model",
-        "Three-step depression detection tool",
-        "Responsive design for mobile and desktop with React.js",
+        "Intelligent content generation using GPT-3.5 Turbo",
+        "Automated decision-making and personalized user interactions",
+        "User authentication and authorization with Clerk",
+        "Responsive design for mobile and desktop",
+        "MERN stack with React + Vite frontend",
       ],
       technologies: {
-        frontend: ["React", "JavaScript", "Tailwind CSS", "Shadcn UI", "Clerk"],
-        backend: [
-          "Node.js",
-          "Express Js",
-          "MongoDB",
-          "Mongoose",
-          "Clerk Tokens",
-          "OpenAI",
-        ],
-        tools: ["JWT", "OpenAI API", "MongoDB Atlas", "VS Code", "Figma"],
+        frontend: ["React", "TypeScript", "JavaScript", "Shadcn UI", "Tailwind CSS", "Clerk"],
+        backend: ["Node.js", "Express.js", "MongoDB", "Mongoose", "OpenAI GPT-3.5"],
+        tools: ["Python", "Clerk Tokens", "MongoDB Atlas", "VS Code", "Figma"],
       },
     },
     {
       id: 5,
-      title: "Hirely AI Web Application",
+      title: "Hirely AI Smart Hire Portal",
       description:
-        "Hirely AI is a full-stack solution with React, Node.js, and MongoDB",
+        "A MERN stack MVP that streamlines hiring processes using OpenAI GPT-3.5 Turbo.",
       longDescription:
-        "Hirely AI Web Application is an MVP product designed to streamline hiring processes using AI. Built with MERN Stack, React, and Vite for a fast and efficient frontend, it leverages Express.js for a scalable backend and Tailwind CSS for a modern, responsive UI. OpenAI GPT-3.5 Turbo powers the AI-assisted experiences in the application.",
-      image: "/api/placeholder/600/400",
-      tags: ["React", "JavaScript", "Tailwind CSS", "Shadcn UI"],
+        "Hirely AI Smart Hire portal web application is an MVP product designed to streamline hiring processes using AI. Built with MERN Stack, React, and Vite for a fast and efficient frontend, it leverages Express.js for a scalable backend and Tailwind CSS for a modern, responsive UI. OpenAI GPT-3.5 Turbo powers the AI-assisted hiring experiences in the application.",
+      image: "https://storage.googleapis.com/portfolio_thineth/Hirely%20AI.png",
+      tags: ["React", "TypeScript", "Node.js", "OpenAI"],
       category: "Full-Stack",
-      github: "https://github.com/thinethwic/HirelyAI-Front-End.git",
-      demo: "https://example.com/task-demo",
+      github: "https://github.com/thinethwic/HirelyAI.git",
+      demo: "https://aidf-front-end-thineth.netlify.app/",
       features: [
-        "Implemented a Node.js backend with TypeScript and MongoDB",
-        "User authentication and authorization from Clerk",
-        "Implemented a responsive UI with React.js",
+        "AI-powered hiring assistance using OpenAI GPT-3.5 Turbo",
         "Post available jobs and apply through the platform",
+        "User authentication and authorization with Clerk",
+        "Responsive UI with React.js and Tailwind CSS",
+        "Scalable Node.js and Express.js backend with MongoDB",
       ],
       technologies: {
-        frontend: ["React", "JavaScript", "Shadcn UI", "Tailwind CSS"],
-        backend: ["Node.js", "Express", "MongoDB", "Mongoose", "TypeScript"],
-        tools: ["Clerk", "Figma", "OpenAI", "AWS S3"],
+        frontend: ["React", "TypeScript", "JavaScript", "Shadcn UI", "Tailwind CSS"],
+        backend: ["Node.js", "Express.js", "MongoDB", "Mongoose", "OpenAI GPT-3.5"],
+        tools: ["Python", "Clerk", "AWS S3", "VS Code", "Figma"],
       },
     },
     {
       id: 6,
-      title: "POS Software System",
-      description:
-        "POS Software System is a robust Point of Sale solution designed for efficient transaction processing and business management.",
-      longDescription:
-        "POS Software System is a robust Point of Sale solution designed for efficient transaction processing and business management. Built with C# for a powerful and user-friendly interface, it uses SQL databases for secure and scalable data storage. The system streamlines sales, inventory management, and reporting for retail and hospitality businesses.",
-      image: "https://storage.googleapis.com/portfolio_thineth/projectPOS.png",
-      tags: ["C#", "POS", "SQL", "Database Management Studio", "Figma"],
-      category: "Desktop",
-      github: "https://github.com/example/data-viz",
-      demo: "https://example.com/dataviz-demo",
-      features: [
-        "Inventory management",
-        "Payment processing",
-        "Employee management",
-        "Barcode scanner",
-        "Sales processing",
-        "Reporting and analytics",
-      ],
-      technologies: {
-        frontend: ["Windows Forms (WinForms)"],
-        backend: ["C#"],
-        tools: ["SQL Server Management Studio", "Figma"],
-      },
-    },
-    {
-      id: 7,
-      title: "Ceylon Hiker Website (WordPress)",
-      description:
-        "A responsive travel, camping, and 4x4 website built with WordPress",
-      longDescription:
-        "Ceylon Hiker is a 3-in-1 website that brings together travelling, camping, and 4x4 track information. It provides route details, campsite information, and off-road guidance in a single experience for outdoor enthusiasts in Sri Lanka.",
-      image: "/api/placeholder/600/400",
-      tags: ["WordPress", "PHP", "Nginx", "CSS", "MySQL"],
-      category: "Frontend",
-      github: "https://github.com/example/weather-app",
-      demo: "https://example.com/weather-demo",
-      features: [
-        "3-in-1 platform developed using WordPress",
-        "Designed and implemented a device-responsive UI",
-        "Details about camping routes and 4x4 tracks",
-        "Easy-to-customize website structure",
-        "Integrated a chat agent for end users",
-      ],
-      technologies: {
-        frontend: ["HTML", "CSS3", "JavaScript"],
-        backend: ["Nginx", "PHP", "MySQL"],
-        tools: ["All-in-One WP Migration", "Tawk.to Live Chat", "WPForms Lite"],
-      },
-    },
-    {
-      id: 8,
       title: "BeanStack - Coffee Shop",
       description:
         "A fully functional responsive website for a fictional coffee shop",
       longDescription:
         "BeanStack is a fully functional responsive website for a fictional coffee shop focused on user experience. Customers can browse the menu, access shop information, and place orders online through a clean and approachable interface.",
-      image: "/api/placeholder/600/400",
+      image: "https://storage.googleapis.com/portfolio_thineth/cofeee.jpg",
       tags: ["ASP.NET", "C#", "MVC", "Tailwind CSS"],
       category: "Full-Stack",
       github: "https://github.com/example/blog-platform",
@@ -538,10 +460,8 @@ export const siteData = {
       title: "Backend Development",
       icon: "server",
       skills: [
-        { name: "Spring Boot", level: 10, years: 0 },
-        { name: "Node.js", level: 88, years: 3 },
+        { name: "Spring Boot", level: 90, years: 1 },
         { name: "TypeScript", level: 90, years: 2 },
-        { name: "Python", level: 85, years: 2 },
         { name: "Express.js", level: 90, years: 3 },
         { name: "C# .NET", level: 80, years: 1 },
         { name: "RESTful APIs", level: 92, years: 3 },
@@ -552,10 +472,10 @@ export const siteData = {
       title: "Databases",
       icon: "database",
       skills: [
+        { name: "PostgreSQL", level: 85, years: 1 },
         { name: "SQL Server Management", level: 85, years: 2 },
         { name: "MongoDB", level: 80, years: 2 },
         { name: "MySQL", level: 75, years: 2 },
-        { name: "Mongoose", level: 85, years: 2 },
       ],
     },
     tools: {
@@ -580,6 +500,19 @@ export const siteData = {
     },
   } satisfies Record<string, SkillCategory>,
   certifications: [
+
+    {
+      name: "Java OOP & Spring Boot Backend Engineer",
+      issuer: "STEM Link",
+      year: "Apr 2026",
+      credentialId: "f737311f-e6f6-40fa-ab60-172338aeff00",
+    },
+    {
+      name: "Artificial Intelligence and Machine Learning Certification",
+      issuer: "SKYREK",
+      year: "Nov 2025",
+      credentialId: "SKML25788",
+    },
     {
       name: "Introduction to Large Language Model",
       issuer: "Google",
@@ -628,6 +561,20 @@ export const siteData = {
     {
       id: 1,
       type: "work",
+      title: "Intern - Software Engineer",
+      company: "CIC Feeds (Pvt) LTD",
+      location: "Ekala, Sri Lanaka",
+      startDate: "2026 March",
+      endDate: "Present",
+      description:
+        "",
+      achievements: ["Completed two Project, IT Asset Tool, CIC Intranet Project"],
+      technologies: ["Java Spring Boot", "PostgreSQL", "Hibernate", "Ubuntu", "Lunux"],
+      icon: "briefcase",
+    },
+    {
+      id: 2,
+      type: "work",
       title: "Volunteer - Software Developer",
       company: "BinaryCode Solutions (Pvt) LTD",
       location: "Matara",
@@ -639,8 +586,9 @@ export const siteData = {
       technologies: ["Visual Studio", "C#", "SQL", "SQL Management System"],
       icon: "briefcase",
     },
+
     {
-      id: 2,
+      id: 3,
       type: "work",
       title: "Intern - Database Management",
       company: "Nekfa Australia (Pvt) Limited",
@@ -658,7 +606,7 @@ export const siteData = {
       icon: "briefcase",
     },
     {
-      id: 3,
+      id: 4,
       type: "work",
       title: "IT System Technician",
       company: "Wickramarachchi Distributors (Pvt) LTD",
@@ -676,7 +624,7 @@ export const siteData = {
       icon: "briefcase",
     },
     {
-      id: 4,
+      id: 5,
       type: "certification",
       title:
         "Early Detection and Management of Depression Among University Students",
@@ -694,7 +642,7 @@ export const siteData = {
       icon: "award",
     },
     {
-      id: 5,
+      id: 6,
       type: "education",
       title:
         "Bachelor of Health Science (BHSc) Hons in Health Information Communication Technology (HICT)",
@@ -722,7 +670,7 @@ export const siteData = {
       icon: "graduation-cap",
     },
     {
-      id: 6,
+      id: 7,
       type: "education",
       title:
         "Certificate in Advanced Multimedia Web Design & Development Techniques",
@@ -737,7 +685,7 @@ export const siteData = {
       icon: "graduation-cap",
     },
     {
-      id: 7,
+      id: 8,
       type: "education",
       title: "Advanced Level Examination",
       company: "Rahula College Matara",

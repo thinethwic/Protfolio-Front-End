@@ -33,7 +33,7 @@ function Navigation() {
             "glass-panel glow-ring relative mx-auto flex min-h-18 items-center justify-between rounded-[28px] px-4 py-3 transition-all sm:px-5",
             scrolled
               ? "bg-white/86 shadow-[0_16px_60px_rgba(15,23,42,0.14)] dark:bg-slate-950/78 dark:shadow-[0_16px_60px_rgba(2,6,23,0.42)]"
-              : "bg-white/72 dark:bg-slate-950/58"
+              : "bg-white/72 dark:bg-slate-950/58",
           )}
         >
           <Link to="/" className="group relative flex items-center gap-3">
@@ -41,11 +41,11 @@ function Navigation() {
               {siteData.personal.initials}
             </span>
             <div className="hidden sm:block">
-              <p className="text-sm font-semibold tracking-[-0.03em] text-foreground dark:text-white">
+              <p className="text-lg font-bold tracking-[-0.03em] text-foreground dark:text-white">
                 {siteData.personal.brandName}
               </p>
-              <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-muted-foreground">
-                Product-minded engineer
+              <p className="font-mono font-semibold text-[13px] uppercase tracking-[0.28em] text-muted-foreground">
+                Full-Stack Engineer
               </p>
             </div>
           </Link>
@@ -60,14 +60,18 @@ function Navigation() {
                   to={item.href}
                   className={cn(
                     "group relative rounded-full px-4 py-2.5 text-sm font-medium text-foreground/72 transition-colors hover:text-foreground dark:text-slate-300 dark:hover:text-white",
-                    active && "text-foreground dark:text-white"
+                    active && "text-foreground dark:text-white",
                   )}
                 >
                   {active ? (
                     <motion.span
                       layoutId="nav-indicator"
                       className="absolute inset-0 rounded-full border border-black/8 bg-black/[0.04] dark:border-white/10 dark:bg-white/[0.06]"
-                      transition={{ type: "spring", stiffness: 360, damping: 32 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 360,
+                        damping: 32,
+                      }}
                     />
                   ) : null}
                   <span className="relative z-10">{item.name}</span>
@@ -86,7 +90,11 @@ function Navigation() {
               aria-label="Toggle menu"
               aria-expanded={isOpen}
             >
-              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {isOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
             </button>
           </div>
 
@@ -111,7 +119,7 @@ function Navigation() {
                           "block rounded-2xl px-4 py-3 text-sm font-medium transition-colors",
                           active
                             ? "bg-black/[0.05] text-foreground dark:bg-white/[0.08] dark:text-white"
-                            : "text-foreground/78 hover:bg-black/[0.03] hover:text-foreground dark:text-slate-300 dark:hover:bg-white/[0.05] dark:hover:text-white"
+                            : "text-foreground/78 hover:bg-black/[0.03] hover:text-foreground dark:text-slate-300 dark:hover:bg-white/[0.05] dark:hover:text-white",
                         )}
                       >
                         {item.name}
