@@ -8,6 +8,7 @@ const ROUTE_TITLES: Record<string, string> = {
     "/skills": "Skills",
     "/timeline": "Timeline",
     "/contact": "Contact",
+    "/services": "Services",
 };
 
 const APP_NAME = "Thineth Wick";

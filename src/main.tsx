@@ -6,6 +6,7 @@ import MainLayout from "./layouts/main.layout";
 import HomePage from "./pages/home.page";
 import AboutPage from "./pages/about.page";
 import ProjectsPage from "./pages/projects.page";
+import ServicesPage from "./pages/services.page";
 import SkillsPage from "./pages/skills.page";
 import TimelinePage from "./pages/timeline.page";
 import ContactPage from "./pages/contact.page";
@@ -21,6 +22,10 @@ const route = createBrowserRouter([
       {
         path: "/about",
         element: <AboutPage />,
+      },
+      {
+        path: "/services",
+        element: <ServicesPage />,
       },
       {
         path: "/projects",

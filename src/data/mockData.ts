@@ -74,6 +74,20 @@ export interface TimelineItem {
   icon: "briefcase" | "graduation-cap" | "award";
 }
 
+export interface ServiceItem {
+  title: string;
+  description: string;
+  icon:
+    | "code"
+    | "palette"
+    | "server"
+    | "rocket"
+    | "database"
+    | "briefcase";
+  deliverables: string[];
+  technologies: string[];
+}
+
 export const siteData = {
   personal: {
     fullName: "Thineth Wickramarchchi",
@@ -97,6 +111,7 @@ export const siteData = {
   navigation: [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
+    { name: "Services", href: "/services" },
     { name: "Projects", href: "/projects" },
     { name: "Skills", href: "/skills" },
     { name: "Timeline", href: "/timeline" },
@@ -261,6 +276,125 @@ export const siteData = {
       description: "Try adjusting your search terms or category filter.",
     },
   },
+  servicesPage: {
+    title: "Services I Provide",
+    description:
+      "I help businesses, startups, and teams design, build, and improve modern digital products with a strong focus on usability, clean engineering, and maintainable systems.",
+    processTitle: "How I Work",
+    processDescription:
+      "A practical workflow that keeps delivery transparent, collaborative, and focused on real business outcomes.",
+    process: [
+      {
+        step: "01",
+        title: "Discover",
+        description:
+          "Understand your product goals, users, technical needs, and project scope before implementation begins.",
+      },
+      {
+        step: "02",
+        title: "Design & Plan",
+        description:
+          "Shape the UI, architecture, and delivery milestones so the product direction is clear and maintainable.",
+      },
+      {
+        step: "03",
+        title: "Build",
+        description:
+          "Develop responsive frontend experiences and reliable backend features with production-level attention to quality.",
+      },
+      {
+        step: "04",
+        title: "Launch & Improve",
+        description:
+          "Support testing, release readiness, and follow-up improvements based on feedback and product growth.",
+      },
+    ],
+    cta: {
+      title: "Need a service tailored to your project?",
+      description:
+        "If you have an idea, product requirement, or company system to build, I can help turn it into a polished and scalable solution.",
+    },
+  },
+  services: [
+    {
+      title: "Frontend Web Development",
+      icon: "code",
+      description:
+        "Building fast, responsive, and modern user interfaces with a strong focus on usability, performance, and clean component architecture.",
+      deliverables: [
+        "Responsive React/Vite interfaces",
+        "Modern Tailwind CSS and component-based UI systems",
+        "Dashboard and admin panel development",
+        "Landing pages and portfolio websites",
+      ],
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Vite", "Shadcn UI"],
+    },
+    {
+      title: "Backend Development",
+      icon: "server",
+      description:
+        "Designing secure and scalable backend systems for APIs, business logic, authentication, and enterprise workflows.",
+      deliverables: [
+        "REST API development",
+        "Role-based authentication and authorization",
+        "Spring Boot and Node.js backend services",
+        "Business logic and system integration",
+      ],
+      technologies: ["Java Spring Boot", "Node.js", "Spring Security", "JWT", "Express.js"],
+    },
+    {
+      title: "Full-Stack Web Applications",
+      icon: "rocket",
+      description:
+        "Delivering complete end-to-end web applications from database design to polished frontend experiences.",
+      deliverables: [
+        "Custom business systems",
+        "Internal company tools and portals",
+        "MERN and Java-based full-stack applications",
+        "Deployment-ready solutions",
+      ],
+      technologies: ["React", "Java Spring Boot", "MongoDB", "PostgreSQL", "Clerk"],
+    },
+    {
+      title: "UI/UX Design",
+      icon: "palette",
+      description:
+        "Designing clean, intuitive, and modern interfaces that help users move through products with clarity and confidence.",
+      deliverables: [
+        "Wireframes and interface layouts",
+        "High-fidelity screens in Figma",
+        "Usability-focused design improvements",
+        "Responsive design systems",
+      ],
+      technologies: ["Figma", "Responsive Design", "UI/UX Design", "Prototyping"],
+    },
+    {
+      title: "Database Design & Management",
+      icon: "database",
+      description:
+        "Structuring reliable databases and data flows that support scalable applications and real-world operational needs.",
+      deliverables: [
+        "Database schema design",
+        "SQL and NoSQL data modeling",
+        "Query optimization and relationship planning",
+        "Business data structure design",
+      ],
+      technologies: ["PostgreSQL", "MySQL", "MongoDB", "SQL Server Management"],
+    },
+    {
+      title: "Company Systems & Internal Tools",
+      icon: "briefcase",
+      description:
+        "Creating practical internal systems for businesses such as inventory tools, intranet platforms, support systems, and operational dashboards.",
+      deliverables: [
+        "Inventory and asset management systems",
+        "Intranet and help-desk platforms",
+        "Department workflow solutions",
+        "Secure business dashboards",
+      ],
+      technologies: ["React", "Java Spring Boot", "PostgreSQL", "Google Cloud", "Role-Based Access"],
+    },
+  ] satisfies ServiceItem[],
   projects: [
     {
       id: 1,
