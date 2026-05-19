@@ -66,8 +66,7 @@ const technologyLogoMap: Record<string, string> = {
   IntelliJ:
     "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/IntelliJ_IDEA_Icon.svg/3840px-IntelliJ_IDEA_Icon.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
 
-  PostgreSQL:
-    "https://img.icons8.com/?size=100&id=JRnxU7ZWP4mi&format=png&color=000000",
+  PostgreSQL: "https://cdn.simpleicons.org/postgresql/4169E1",
 };
 
 function TechnologyChip({ name }: { name: string }) {

@@ -47,8 +47,7 @@ const skillLogoMap: Record<string, string> = {
   "UI/UX Design": "https://cdn.simpleicons.org/framer/0055FF",
   Prototyping: "https://cdn.simpleicons.org/framer/0055FF",
   "User Research": "https://cdn.simpleicons.org/notion/000000",
-  PostgreSQL:
-    "https://img.icons8.com/?size=100&id=JRnxU7ZWP4mi&format=png&color=000000",
+  PostgreSQL: "https://cdn.simpleicons.org/postgresql/4169E1",
 };
 
 function SkillLogo({ skillName }: { skillName: string }) {
