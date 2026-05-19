@@ -263,6 +263,102 @@ export const siteData = {
   projects: [
     {
       id: 1,
+      title: "CIC Intranet Web Application",
+      description:
+        "Unimind AI is a full-stack solution with React, Node.js, and MongoDB",
+      longDescription:
+        "UniMind AI Web Application is an MVP product that leverages GPT-3.5 for advanced AI-driven solutions. Built with MERN Stack, React, and Vite for a high-performance frontend, it uses Express.js for a robust backend and Tailwind CSS for a sleek, responsive UI. The platform harnesses GPT-3.5 to power features such as intelligent content generation, automated decision-making, and personalized user interactions, making it a cutting-edge tool for businesses and individuals.",
+      image:
+        "https://storage.googleapis.com/portfolio_thineth/projectUnimind.png",
+      tags: ["React", "JavaScript", "Tailwind CSS", "Shadcn UI"],
+      category: "Full-Stack",
+      github: "https://github.com/thinethwic/Mini-Project-Front-End.git",
+      demo: "https://example.com/ecommerce-demo",
+      features: [
+        "Implemented a Node.js backend with TypeScript and MongoDB.",
+        "User authentication and authorization from Clerk",
+        "Predict depression level using a fine-tuned model",
+        "Three-step depression detection tool",
+        "Responsive design for mobile and desktop with React.js",
+      ],
+      technologies: {
+        frontend: ["React", "TypeScript", "Tailwind CSS", "Shadcn UI"],
+        backend: [
+          "Java Spring Boot",
+          "Spring Security",
+          "Hibernate",
+          "Post",
+          "PostgreSQL",
+        ],
+        tools: ["VS Code", "Figma", "PgAdmin", "Intellij"],
+      },
+    },
+    {
+      id: 2,
+      title: "Inventory Mangement System - IT Assets",
+      description:
+        "Inventory Management System – IT Assets",
+      longDescription:
+        "My client needed a centralised system to track and manage their organisation's IT assets — from hardware devices to software licenses — replacing messy spreadsheets with a reliable, role-based web platform.",
+      image:
+        "https://storage.googleapis.com/portfolio_thineth/3.png",
+      tags: ["React", "JavaScript", "Tailwind CSS", "Shadcn UI"],
+      category: "Full-Stack",
+      github: "https://github.com/thinethwic/Mini-Project-Front-End.git",
+      demo: "https://example.com/ecommerce-demo",
+      features: [
+        "Implemented a Node.js backend with TypeScript and MongoDB.",
+        "User authentication and authorization from Clerk",
+        "Predict depression level using a fine-tuned model",
+        "Three-step depression detection tool",
+        "Responsive design for mobile and desktop with React.js",
+      ],
+      technologies: {
+        frontend: ["React", "TypeScript", "Tailwind CSS", "Shadcn UI"],
+        backend: [
+          "Java Spring Boot",
+          "Spring Security",
+          "Hibernate",
+          "Post",
+          "PostgreSQL",
+        ],
+        tools: ["VS Code", "Figma", "PgAdmin", "Intellij"],
+      },
+    },
+    {
+      id: 3,
+      title: "SkillMentor - WebApp for Find Your Mentor",
+      description:
+        "SkillMentor – Full-Stack Online Mentoring Platform",
+      longDescription:
+        "My client needed a complete mentoring platform — a marketplace where students discover expert mentors, book sessions, and track learning progress, backed by a full admin system.",
+      image:
+        "https://storage.googleapis.com/portfolio_thineth/Skill-Mentor.png",
+      tags: ["React", "TypeScript", "Tailwind CSS", "Shadcn UI"],
+      category: "Full-Stack",
+      github: "https://skillmentor-frontend-zeta.vercel.app/",
+      demo: "https://github.com/thinethwic/skillmentor-platform.git",
+      features: [
+        "Implemented a Node.js backend with TypeScript and MongoDB.",
+        "User authentication and authorization from Clerk",
+        "Predict depression level using a fine-tuned model",
+        "Three-step depression detection tool",
+        "Responsive design for mobile and desktop with React.js",
+      ],
+      technologies: {
+        frontend: ["React", "TypeScript", "Tailwind CSS", "Shadcn UI"],
+        backend: [
+          "Java Spring Boot",
+          "Spring Security",
+          "Hibernate",
+          "Post",
+          "PostgreSQL",
+        ],
+        tools: ["VS Code", "Figma", "PgAdmin", "Intellij"],
+      },
+    },
+    {
+      id: 4,
       title: "UniMind AI Web Application",
       description:
         "Unimind AI is a full-stack solution with React, Node.js, and MongoDB",
@@ -295,7 +391,7 @@ export const siteData = {
       },
     },
     {
-      id: 2,
+      id: 5,
       title: "Hirely AI Web Application",
       description:
         "Hirely AI is a full-stack solution with React, Node.js, and MongoDB",
@@ -319,7 +415,7 @@ export const siteData = {
       },
     },
     {
-      id: 3,
+      id: 6,
       title: "POS Software System",
       description:
         "POS Software System is a robust Point of Sale solution designed for efficient transaction processing and business management.",
@@ -345,40 +441,7 @@ export const siteData = {
       },
     },
     {
-      id: 4,
-      title: "Portfolio Website",
-      description:
-        "A responsive portfolio website built with React and TypeScript",
-      longDescription:
-        "A modern, responsive portfolio website showcasing projects, skills, and experience. Built with React, TypeScript, Tailwind CSS, and Shadcn UI for optimal performance and user experience.",
-      image: "/api/placeholder/600/400",
-      tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-      category: "Frontend",
-      github: "https://github.com/thinethwic/Protfolio-Front-End.git",
-      demo: "https://thinethwic.netlify.app/",
-      features: [
-        "Responsive design for all devices",
-        "Dark/light theme toggle",
-        "Smooth animations with Framer Motion",
-        "SEO optimization",
-        "Performance optimized",
-        "Accessibility compliant",
-        "Contact form integration",
-      ],
-      technologies: {
-        frontend: [
-          "React",
-          "TypeScript",
-          "Tailwind CSS",
-          "Framer Motion",
-          "Shadcn UI",
-        ],
-        backend: [],
-        tools: ["Vite", "ESLint", "Prettier", "Vercel"],
-      },
-    },
-    {
-      id: 5,
+      id: 7,
       title: "Ceylon Hiker Website (WordPress)",
       description:
         "A responsive travel, camping, and 4x4 website built with WordPress",
@@ -403,30 +466,7 @@ export const siteData = {
       },
     },
     {
-      id: 6,
-      title: "EB Calc Software System",
-      description:
-        "An innovative solution designed for separate electricity billing for rental locations",
-      longDescription:
-        "EB Calc Software is designed for efficient creation of separate electricity bills for rental locations. It streamlines billing processes while improving accuracy and transparency in financial transactions.",
-      image: "/api/placeholder/600/400",
-      tags: ["C#", "Desktop", "SQL Server", "Windows"],
-      category: "Desktop",
-      github: "https://github.com/thinethwic/Elctricity-Bill-New.git",
-      demo: "https://example.com/blog-demo",
-      features: [
-        "Implemented a responsive desktop UI using .NET",
-        "Developed the backend using C#",
-        "Implemented a database with SQL Server Management Studio",
-      ],
-      technologies: {
-        frontend: ["Windows Forms (WinForms)", ".NET"],
-        backend: ["C#", "SQL"],
-        tools: ["SQL Server Management Studio", "Figma"],
-      },
-    },
-    {
-      id: 7,
+      id: 8,
       title: "BeanStack - Coffee Shop",
       description:
         "A fully functional responsive website for a fictional coffee shop",
