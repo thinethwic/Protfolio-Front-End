@@ -1,102 +1,31 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Github,
-  Linkedin,
-  Twitter,
-  Send,
-  MessageCircle,
-  Clock,
-  CheckCircle,
-} from "lucide-react";
+import { CheckCircle2, Github, Linkedin, Mail, MapPin, Phone, Send, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Alert, AlertDescription } from "@/components/ui/alert";
+import Reveal from "@/components/shared/Reveal";
+import SectionIntro from "@/components/shared/SectionIntro";
+import { siteData } from "@/data/mockData";
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 60 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6 },
+const contactIcons = {
+  mail: Mail,
+  phone: Phone,
+  "map-pin": MapPin,
 };
 
-const staggerContainer = {
-  initial: {},
-  animate: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
+const socialIcons = {
+  github: Github,
+  linkedin: Linkedin,
+  twitter: Twitter,
+  mail: Mail,
 };
-
-const contactInfo = [
-  {
-    icon: Mail,
-    title: "Email",
-    value: "thinethwic@gmail.com",
-    description: "Send me an email anytime!",
-    href: "mailto:your.email@example.com",
-  },
-  {
-    icon: Phone,
-    title: "Phone",
-    value: "+94 (76) 809 0515",
-    description: "Call me during business hours",
-    href: "tel:+94 (76) 809 0515",
-  },
-  {
-    icon: MapPin,
-    title: "Location",
-    value: "No 74, Matara Road, Kamburupitiya",
-    description: "Available for remote work",
-    href: "#",
-  },
-];
-
-const socialLinks = [
-  {
-    name: "GitHub",
-    icon: Github,
-    href: "https://github.com/thinethwic",
-    description: "Check out my code",
-  },
-  {
-    name: "LinkedIn",
-    icon: Linkedin,
-    href: "https://linkedin.com/in/thineth-wick",
-    description: "Professional network",
-  },
-  {
-    name: "Twitter",
-    icon: Twitter,
-    href: "https://twitter.com/",
-    description: "Follow my thoughts",
-  },
-];
 
 interface FormData {
   name: string;
   email: string;
   subject: string;
   message: string;
-}
-
-interface FormErrors {
-  name?: string;
-  email?: string;
-  subject?: string;
-  message?: string;
 }
 
 function ContactPage() {
@@ -106,331 +35,189 @@ function ContactPage() {
     subject: "",
     message: "",
   });
-  const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const validateForm = (): boolean => {
-    const newErrors: FormErrors = {};
-
-    if (!formData.name.trim()) {
-      newErrors.name = "Name is required";
-    } else if (formData.name.trim().length < 2) {
-      newErrors.name = "Name must be at least 2 characters";
-    }
-
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Please enter a valid email address";
-    }
-
-    if (!formData.subject.trim()) {
-      newErrors.subject = "Subject is required";
-    } else if (formData.subject.trim().length < 5) {
-      newErrors.subject = "Subject must be at least 5 characters";
-    }
-
-    if (!formData.message.trim()) {
-      newErrors.message = "Message is required";
-    } else if (formData.message.trim().length < 10) {
-      newErrors.message = "Message must be at least 10 characters";
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if (!validateForm()) return;
-
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
     setIsSubmitting(true);
-
-    try {
-      // Simulate form submission
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-
-      // In a real app, you would send the data to your backend
-      console.log("Form submitted:", formData);
-
-      setIsSubmitted(true);
-      setFormData({ name: "", email: "", subject: "", message: "" });
-
-      // Reset success message after 5 seconds
-      setTimeout(() => setIsSubmitted(false), 5000);
-    } catch (error) {
-      console.error("Error submitting form:", error);
-    } finally {
-      setIsSubmitting(false);
-    }
+    await new Promise((resolve) => setTimeout(resolve, 1200));
+    setIsSubmitting(false);
+    setIsSubmitted(true);
+    setFormData({ name: "", email: "", subject: "", message: "" });
+    window.setTimeout(() => setIsSubmitted(false), 3000);
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    const { name, value } = e.target;
+    const { name, value } = event.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-
-    // Clear error when user starts typing
-    if (errors[name as keyof FormErrors]) {
-      setErrors((prev) => ({ ...prev, [name]: undefined }));
-    }
   };
 
   return (
-    <div className="min-h-screen py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial="initial"
-          animate="animate"
-          variants={staggerContainer}
-        >
-          {/* Header */}
-          <motion.div variants={fadeInUp} className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Get In Touch
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              I'm always interested in hearing about new opportunities,
-              collaborations, or just having a friendly chat about technology
-              and development.
-            </p>
-          </motion.div>
+    <div className="space-y-20 pb-20">
+      <section className="section-shell pt-8">
+        <SectionIntro
+          badge="Contact"
+          title={siteData.contactPage.title}
+          description={siteData.contactPage.description}
+        />
+      </section>
 
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <motion.div variants={fadeInUp}>
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-2xl flex items-center gap-2">
-                    <MessageCircle className="h-6 w-6" />
-                    Send a Message
-                  </CardTitle>
-                  <CardDescription>
-                    Fill out the form below and I'll get back to you as soon as
-                    possible.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  {isSubmitted && (
-                    <Alert className="mb-6 border-green-200 bg-green-50 dark:bg-green-900/20">
-                      <CheckCircle className="h-4 w-4 text-green-600 dark:text-green-400" />
-                      <AlertDescription className="text-green-800 dark:text-green-300">
-                        Thanks for your message! I'll get back to you within 24
-                        hours.
-                      </AlertDescription>
-                    </Alert>
-                  )}
+      <section className="section-shell">
+        <div className="grid gap-6 lg:grid-cols-[0.88fr_1.12fr]">
+          <Reveal>
+            <div className="glass-panel rounded-[34px] p-7">
+              <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-sky-200/70">
+                Reach out
+              </p>
+              <div className="mt-8 space-y-4">
+                {siteData.contactInfo.map((item) => {
+                  const Icon = contactIcons[item.icon];
 
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <Label htmlFor="name">Name *</Label>
-                        <Input
-                          id="name"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleChange}
-                          className={errors.name ? "border-red-500" : ""}
-                          placeholder="Your name"
-                        />
-                        {errors.name && (
-                          <p className="text-sm text-red-500">{errors.name}</p>
-                        )}
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="email">Email *</Label>
-                        <Input
-                          id="email"
-                          name="email"
-                          type="email"
-                          value={formData.email}
-                          onChange={handleChange}
-                          className={errors.email ? "border-red-500" : ""}
-                          placeholder="your.email@example.com"
-                        />
-                        {errors.email && (
-                          <p className="text-sm text-red-500">{errors.email}</p>
-                        )}
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="subject">Subject *</Label>
-                      <Input
-                        id="subject"
-                        name="subject"
-                        value={formData.subject}
-                        onChange={handleChange}
-                        className={errors.subject ? "border-red-500" : ""}
-                        placeholder="What's this about?"
-                      />
-                      {errors.subject && (
-                        <p className="text-sm text-red-500">{errors.subject}</p>
-                      )}
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="message">Message *</Label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        className={`min-h-[120px] ${
-                          errors.message ? "border-red-500" : ""
-                        }`}
-                        placeholder="Tell me about your project, ideas, or just say hello!"
-                      />
-                      {errors.message && (
-                        <p className="text-sm text-red-500">{errors.message}</p>
-                      )}
-                    </div>
-
-                    <Button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full"
-                      size="lg"
+                  return (
+                    <a
+                      key={item.title}
+                      href={item.href}
+                      className="group flex items-start gap-4 rounded-[24px] border border-black/6 bg-black/[0.03] p-4 transition-colors hover:bg-black/[0.05] dark:border-white/8 dark:bg-black/20 dark:hover:bg-white/[0.04]"
                     >
-                      {isSubmitting ? (
-                        <div className="flex items-center gap-2">
-                          <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                          Sending...
-                        </div>
-                      ) : (
-                        <div className="flex items-center gap-2">
-                          <Send className="h-5 w-5" />
-                          Send Message
-                        </div>
-                      )}
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* Contact Information */}
-            <motion.div variants={fadeInUp} className="space-y-8">
-              {/* Contact Methods */}
-              <div className="space-y-6">
-                <h2 className="text-2xl font-bold">Contact Information</h2>
-                {contactInfo.map((item) => (
-                  <Card
-                    key={item.title}
-                    className="hover:shadow-lg transition-shadow"
-                  >
-                    <CardContent className="p-6">
-                      <div className="flex items-start gap-4">
-                        <div className="p-2 bg-primary/10 rounded-lg">
-                          <item.icon className="h-6 w-6 text-primary" />
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="font-semibold text-lg">
-                            {item.title}
-                          </h3>
-                          <p className="text-foreground font-medium">
-                            {item.value}
-                          </p>
-                          <p className="text-sm text-muted-foreground">
-                            {item.description}
-                          </p>
-                        </div>
+                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/[0.06] text-sky-200">
+                        <Icon className="h-5 w-5" />
                       </div>
-                    </CardContent>
-                  </Card>
-                ))}
+                      <div>
+                        <p className="text-sm text-muted-foreground">{item.title}</p>
+                        <p className="mt-1 font-medium text-foreground dark:text-white">{item.value}</p>
+                        <p className="mt-2 text-sm text-muted-foreground">{item.description}</p>
+                      </div>
+                    </a>
+                  );
+                })}
               </div>
 
-              {/* Social Links */}
-              <div className="space-y-6">
-                <h2 className="text-2xl font-bold">Connect With Me</h2>
-                <div className="grid gap-4">
-                  {socialLinks.map((social) => (
-                    <Card
+              <div className="mt-8 flex flex-wrap gap-3">
+                {siteData.socialLinks.map((social) => {
+                  const Icon = socialIcons[social.icon];
+
+                  return (
+                    <a
                       key={social.name}
-                      className="hover:shadow-lg transition-shadow"
+                      href={social.href}
+                      target={social.href.startsWith("http") ? "_blank" : undefined}
+                      rel={
+                        social.href.startsWith("http")
+                          ? "noopener noreferrer"
+                          : undefined
+                      }
+                      className="inline-flex items-center gap-2 rounded-full border border-black/8 bg-white/72 px-4 py-2 text-sm text-foreground/78 transition-all hover:-translate-y-0.5 hover:bg-white hover:text-foreground dark:border-white/10 dark:bg-white/[0.04] dark:text-slate-300 dark:hover:bg-white/[0.08] dark:hover:text-white"
                     >
-                      <CardContent className="p-6">
-                        <a
-                          href={social.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-4 group"
-                        >
-                          <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
-                            <social.icon className="h-6 w-6 text-primary" />
-                          </div>
-                          <div>
-                            <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">
-                              {social.name}
-                            </h3>
-                            <p className="text-sm text-muted-foreground">
-                              {social.description}
-                            </p>
-                          </div>
-                        </a>
-                      </CardContent>
-                    </Card>
-                  ))}
+                      <Icon className="h-4 w-4" />
+                      {social.name}
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.08}>
+            <div className="glass-panel rounded-[34px] p-7 sm:p-8">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <h2 className="text-3xl font-semibold tracking-[-0.05em] text-foreground dark:text-white">
+                    {siteData.contactPage.form.title}
+                  </h2>
+                  <p className="mt-3 max-w-xl leading-7 text-foreground/72 dark:text-slate-300">
+                    {siteData.contactPage.form.description}
+                  </p>
+                </div>
+                <div className="hidden rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 font-mono text-[11px] uppercase tracking-[0.28em] text-emerald-200 sm:block">
+                  Usually replies in 24h
                 </div>
               </div>
 
-              {/* Response Time */}
-              <Card>
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-4">
-                    <div className="p-2 bg-green-100 dark:bg-green-900 rounded-lg">
-                      <Clock className="h-6 w-6 text-green-600 dark:text-green-400" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-lg">Response Time</h3>
-                      <p className="text-sm text-muted-foreground">
-                        I typically respond to messages within 24 hours during
-                        business days.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          </div>
+              {isSubmitted ? (
+                <div className="mt-6 flex items-center gap-3 rounded-[24px] border border-emerald-400/20 bg-emerald-400/10 px-4 py-4 text-emerald-100">
+                  <CheckCircle2 className="h-5 w-5" />
+                  {siteData.contactPage.form.successMessage}
+                </div>
+              ) : null}
 
-          {/* CTA Section */}
-          <motion.section variants={fadeInUp} className="text-center mt-20">
-            <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl p-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Let's Build Something Great Together
-              </h2>
-              <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Whether you have a project in mind, want to collaborate, or just
-                want to say hello, I'm always excited to connect with fellow
-                developers and creative minds.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg">
-                  <a href="mailto:your.email@example.com">
-                    <Mail className="mr-2 h-5 w-5" />
-                    Email Me Directly
-                  </a>
-                </Button>
-                <Button variant="outline" size="lg" asChild>
-                  <a
-                    href="https://www.linkedin.com/in/thineth-wick/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Linkedin className="mr-2 h-5 w-5" />
-                    Connect on LinkedIn
-                  </a>
-                </Button>
-              </div>
+              <form onSubmit={handleSubmit} className="mt-8 space-y-5">
+                <div className="grid gap-5 sm:grid-cols-2">
+                  <div className="space-y-2">
+                    <Label htmlFor="name" className="text-foreground/80 dark:text-slate-300">
+                      Name
+                    </Label>
+                    <Input
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder={siteData.contactPage.form.placeholders.name}
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="email" className="text-foreground/80 dark:text-slate-300">
+                      Email
+                    </Label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder={siteData.contactPage.form.placeholders.email}
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="subject" className="text-foreground/80 dark:text-slate-300">
+                    Subject
+                  </Label>
+                  <Input
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    placeholder={siteData.contactPage.form.placeholders.subject}
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="message" className="text-foreground/80 dark:text-slate-300">
+                    Message
+                  </Label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="min-h-[180px]"
+                    placeholder={siteData.contactPage.form.placeholders.message}
+                  />
+                </div>
+
+                <div className="flex flex-wrap gap-3">
+                  <Button type="submit" size="lg" disabled={isSubmitting}>
+                    <Send className="h-4 w-4" />
+                    {isSubmitting
+                      ? siteData.contactPage.form.submittingLabel
+                      : siteData.contactPage.form.submitLabel}
+                  </Button>
+                  <Button variant="outline" size="lg" asChild>
+                    <a href={`mailto:${siteData.personal.email}`}>
+                      <Mail className="h-4 w-4" />
+                      Email directly
+                    </a>
+                  </Button>
+                </div>
+              </form>
             </div>
-          </motion.section>
-        </motion.div>
-      </div>
+          </Reveal>
+        </div>
+      </section>
     </div>
   );
 }

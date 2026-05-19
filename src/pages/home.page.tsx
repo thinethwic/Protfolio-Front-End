@@ -1,310 +1,282 @@
 import {
   ArrowRight,
-  Code,
+  BriefcaseBusiness,
+  Code2,
+  Download,
+  ExternalLink,
+  Github,
+  Linkedin,
+  Mail,
   Palette,
   Rocket,
-  Download,
-  Github,
-  ExternalLink,
+  Sparkles,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import TypingHeading from "@/components/shared/TypingHeading";
+import Reveal from "@/components/shared/Reveal";
+import SectionIntro from "@/components/shared/SectionIntro";
+import { siteData } from "@/data/mockData";
 
-// Animation variants
-const fadeInUp = {
-  initial: { opacity: 0, y: 60 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6 },
+const homeSkillIcons = {
+  code: Code2,
+  palette: Palette,
+  rocket: Rocket,
 };
 
-const staggerContainer = {
-  initial: {},
-  animate: {
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
+const socialIconMap = {
+  github: Github,
+  linkedin: Linkedin,
+  twitter: Sparkles,
+  mail: Mail,
 };
-
-// Sample data - replace with your actual data
-const featuredProjects = [
-  {
-    id: 1,
-    title: "UniMind AI",
-    description:
-      "UniMind AI Web Application is an MVP product that leverages GPT-3.5 for advanced AI-driven solutions. Built with MERN Stack, React, + Vite for a high-performancefrontend, it uses Express.js for a robust backend and Tailwind CSS for a sleek,responsive UI.",
-    image:
-      "https://storage.googleapis.com/portfolio_thineth/projectUnimind.png",
-    tags: ["React", "MongoDB", "Express Js", "GPT-3.5 Turbo"],
-    github: "https://github.com/thinethwic/Mini-Project-Front-End.git",
-    demo: "https://example.com/demo1",
-  },
-  {
-    id: 2,
-    title: "Hirely AI",
-    description:
-      "Hirely AI Web Application is an MVP product designed to streamline hiring processesusing AI. Built with MERN Stack, React, + Vite for a fast and efficient frontend, itleverages Express.js for a scalable backend and Tailwind CSS for a modern,responsive UI.",
-    image: "/api/placeholder/400/200",
-    tags: ["React", "JavaScript", "Node.js", "MongoDB"],
-    github: "https://github.com/thinethwic/HirelyAI-Front-End.git",
-    demo: "https://example.com/demo2",
-  },
-  {
-    id: 3,
-    title: "POS Software System",
-    description:
-      "POS Software System is a robust Point of Sale (POS) solution designed for efficient transaction processing and business management. Built with C# for a powerful anduser-friendly interface,",
-    image: "https://storage.googleapis.com/portfolio_thineth/projectPOS.png",
-    tags: ["C#", "Desktop App", "POS", "ERP"],
-    github: "https://github.com/example/project3",
-    demo: "https://example.com/demo3",
-  },
-];
-
-const skills = [
-  {
-    icon: Code,
-    name: "Frontend Development",
-    description: "React, TypeScript, Tailwind CSS, Shadcn UI",
-  },
-  {
-    icon: Palette,
-    name: "UI/UX Design",
-    description: "Figma, Adobe XD, Responsive Design",
-  },
-  {
-    icon: Rocket,
-    name: "Backend Development",
-    description: "Node.js, .NET ASP, Mongo DB, Spring Boot",
-  },
-];
 
 function HomePage() {
-  const directAvatarUrl =
-    "https://storage.googleapis.com/portfolio_thineth/Thinethprofile.jpg";
+  const featuredProjects = siteData.projects.filter((project) =>
+    new Set(siteData.home.featuredProjectsSection.projectIds).has(
+      project.id as 1 | 2 | 3
+    )
+  );
 
   const downloadResume = () => {
-    // In a real app, this would trigger a download of your actual resume
     const link = document.createElement("a");
-    link.href =
-      "https://storage.cloud.google.com/portfolio_thineth/Thineth%20CV.pdf"; // Replace with actual resume file path
-    link.download = "Thineth CV.pdf";
+    link.href = siteData.personal.resumeUrl;
+    link.download = siteData.personal.resumeFileName;
     link.click();
   };
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative py-20 md:py-32 bg-gradient-to-br from-primary/5 to-secondary/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial="initial"
-            animate="animate"
-            variants={staggerContainer}
-            className="text-center"
-          >
-            <motion.div variants={fadeInUp} className="mb-8">
-              <Avatar className="w-32 h-32 mx-auto mb-6">
-                <AvatarImage src={directAvatarUrl} alt="Profile" />
-                <AvatarFallback>TW</AvatarFallback>
-              </Avatar>
-            </motion.div>
+    <div className="pb-20">
+      <section className="section-shell relative pt-10 sm:pt-16">
+        <div className="grid gap-12 lg:grid-cols-[1fr_0.95fr] lg:items-center">
+          <div className="relative">
+            <Reveal className="space-y-8">
+              <TypingHeading />
+              <p className="max-w-2xl text-balance text-lg leading-8 text-foreground/78 sm:text-xl">
+                {siteData.home.heroDescription}
+              </p>
 
-            <TypingHeading />
+              <div className="flex flex-wrap items-center gap-4">
+                <Button asChild size="lg">
+                  <Link to="/projects">
+                    Explore Selected Work <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </Button>
+                <Button size="lg" variant="outline" onClick={downloadResume}>
+                  <Download className="h-4 w-4" />
+                  Download Resume
+                </Button>
+              </div>
 
-            <motion.p
-              variants={fadeInUp}
-              className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto"
-            >
-              Full Stack Developer & UI/UX Designer passionate about creating
-              beautiful, functional, and user-centered digital experiences.
-            </motion.p>
+              <div className="flex flex-wrap items-center gap-3">
+                {siteData.socialLinks.map((social) => {
+                  const Icon = socialIconMap[social.icon];
+
+                  return (
+                    <a
+                      key={social.name}
+                      href={social.href}
+                      target={social.href.startsWith("http") ? "_blank" : undefined}
+                      rel={
+                        social.href.startsWith("http")
+                          ? "noopener noreferrer"
+                          : undefined
+                      }
+                      className="group inline-flex items-center gap-2 rounded-full border border-black/8 bg-white/65 px-4 py-2 text-sm text-foreground/80 shadow-[0_8px_24px_rgba(15,23,42,0.08)] transition-all hover:-translate-y-0.5 hover:bg-white hover:text-foreground dark:border-white/10 dark:bg-white/[0.04] dark:text-slate-300 dark:shadow-none dark:hover:bg-white/[0.08] dark:hover:text-white"
+                    >
+                      <Icon className="h-4 w-4" />
+                      {social.name}
+                    </a>
+                  );
+                })}
+              </div>
+            </Reveal>
 
             <motion.div
-              variants={fadeInUp}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
+              animate={{ y: [0, -14, 0] }}
+              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -left-4 top-8 hidden rounded-2xl border border-black/8 bg-white/80 px-4 py-3 text-sm text-sky-950 shadow-[0_16px_40px_rgba(15,23,42,0.14)] backdrop-blur-xl xl:block dark:border-white/10 dark:bg-white/[0.04] dark:text-sky-100 dark:shadow-[0_14px_50px_rgba(6,10,24,0.32)]"
             >
-              <Button asChild size="lg" className="text-lg">
-                <Link to="/projects">
-                  View My Work <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button
-                onClick={downloadResume}
-                variant="outline"
-                size="lg"
-                className="text-lg"
-              >
-                <Download className="mr-2 h-5 w-5" />
-                Download Resume
-              </Button>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Skills Overview */}
-      <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-          >
-            <motion.div variants={fadeInUp} className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">What I Do</h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                I specialize in creating end-to-end digital solutions that
-                combine great design with robust functionality.
+              <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-sky-700/70 dark:text-sky-200/70">
+                Shipping
               </p>
+              <p className="mt-2 font-medium">Interfaces that feel precise</p>
             </motion.div>
+          </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              {skills.map((skill) => (
-                <motion.div key={skill.name} variants={fadeInUp}>
-                  <Card className="text-center h-full hover:shadow-lg transition-shadow">
-                    <CardHeader>
-                      <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                        <skill.icon className="h-8 w-8 text-primary" />
+          <Reveal delay={0.1} className="relative">
+            <div className="relative overflow-hidden rounded-[38px] border border-black/8 bg-white/80 p-4 shadow-[0_30px_80px_rgba(15,23,42,0.12)] backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.04] dark:shadow-[0_24px_80px_rgba(6,10,24,0.42)]">
+              <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-black/10 to-transparent dark:via-white/30" />
+              <div className="absolute right-5 top-5 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 font-mono text-[11px] uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-200">
+                Open to work
+              </div>
+
+              <div className="grid gap-4 lg:grid-rows-[auto_1fr_auto]">
+                <div className="flex items-start justify-between gap-4 px-3 pt-3">
+                  <div>
+                    <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-sky-700/80 dark:text-sky-200/70">
+                      Personal brand
+                    </p>
+                    <p className="mt-3 max-w-sm text-sm leading-7 text-foreground/72 dark:text-slate-300">
+                      Blending product thinking, motion, and frontend craft to
+                      build elegant developer experiences.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="relative mx-auto flex w-full max-w-[28rem] justify-center overflow-hidden rounded-[32px] border border-black/6 bg-gradient-to-br from-sky-100 via-white to-violet-100 p-4 dark:border-white/10 dark:from-sky-400/15 dark:via-slate-950 dark:to-violet-400/10">
+                  <div className="absolute inset-x-10 top-0 h-32 rounded-full bg-sky-300/30 blur-3xl dark:bg-sky-400/20" />
+                  <img
+                    src={siteData.personal.avatarUrl}
+                    alt={siteData.personal.fullName}
+                    className="relative z-10 h-[26rem] w-full rounded-[28px] object-cover object-top shadow-[0_22px_60px_rgba(15,23,42,0.18)] sm:h-[34rem]"
+                  />
+                </div>
+
+                <div className="grid gap-4 px-3 pb-3 sm:grid-cols-[1.1fr_0.9fr]">
+                  <div className="grid gap-4 sm:grid-cols-3 sm:col-span-2">
+                    {[
+                      { label: "Projects launched", value: "07" },
+                      { label: "Years building", value: "04+" },
+                      { label: "Design systems", value: "05" },
+                    ].map((stat) => (
+                      <div
+                        key={stat.label}
+                        className="rounded-[24px] border border-black/6 bg-white/70 p-4 shadow-[0_10px_28px_rgba(15,23,42,0.08)] dark:border-white/10 dark:bg-black/20 dark:shadow-none"
+                      >
+                        <p className="text-2xl font-semibold tracking-[-0.05em] text-foreground dark:text-white">
+                          {stat.value}
+                        </p>
+                        <p className="mt-2 text-sm text-muted-foreground">
+                          {stat.label}
+                        </p>
                       </div>
-                      <CardTitle className="text-xl">{skill.name}</CardTitle>
-                      <CardDescription className="text-base">
-                        {skill.description}
-                      </CardDescription>
-                    </CardHeader>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
+                    ))}
+                  </div>
 
-      {/* Featured Projects */}
-      <section className="py-20 bg-muted/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-          >
-            <motion.div variants={fadeInUp} className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Featured Projects
-              </h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Here are some of my recent projects that showcase my skills and
-                experience.
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {featuredProjects.map((project) => (
-                <motion.div key={project.id} variants={fadeInUp}>
-                  <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-                    <div className="aspect-video bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
-                      <img src={project.image} alt="" />
+                  <div className="rounded-[28px] border border-black/6 bg-white/72 p-5 shadow-[0_10px_28px_rgba(15,23,42,0.08)] dark:border-white/10 dark:bg-black/20 dark:shadow-none">
+                    <div className="mb-4 flex items-center gap-3">
+                      <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-sky-500/10 text-sky-700 dark:text-sky-200">
+                        <BriefcaseBusiness className="h-5 w-5" />
+                      </span>
+                      <div>
+                        <p className="text-sm font-medium text-foreground dark:text-white">
+                          Current focus
+                        </p>
+                        <p className="text-sm text-muted-foreground">
+                          React interfaces and SaaS-style UX.
+                        </p>
+                      </div>
                     </div>
-                    <CardHeader>
-                      <CardTitle className="text-xl">{project.title}</CardTitle>
-                      <CardDescription className="text-sm">
-                        {project.description}
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {project.tags.map((tag) => (
+                    <div className="flex flex-wrap gap-2">
+                      {["React", "TypeScript", "Framer Motion", "Tailwind CSS"].map(
+                        (tag) => (
                           <Badge
                             key={tag}
                             variant="secondary"
-                            className="text-xs"
+                            className="rounded-full border border-black/6 bg-black/[0.03] px-3 py-1 text-foreground/75 dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-200"
                           >
                             {tag}
                           </Badge>
-                        ))}
-                      </div>
-                      <div className="flex gap-2">
-                        <Button variant="outline" size="sm" asChild>
-                          <a
-                            href={project.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <Github className="h-4 w-4 mr-2" />
-                            Code
-                          </a>
-                        </Button>
-                        <Button size="sm" asChild>
-                          <a
-                            href={project.demo}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <ExternalLink className="h-4 w-4 mr-2" />
-                            Demo
-                          </a>
-                        </Button>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
+                        )
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-
-            <motion.div variants={fadeInUp} className="text-center mt-12">
-              <Button asChild size="lg" variant="outline">
-                <Link to="/projects">
-                  View All Projects <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-            </motion.div>
-          </motion.div>
+          </Reveal>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-primary text-primary-foreground">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-          >
-            <motion.h2
-              variants={fadeInUp}
-              className="text-3xl md:text-4xl font-bold mb-4"
-            >
-              Ready to work together?
-            </motion.h2>
-            <motion.p
-              variants={fadeInUp}
-              className="text-xl mb-8 max-w-2xl mx-auto opacity-90"
-            >
-              I'm always interested in new opportunities and interesting
-              projects. Let's discuss how we can bring your ideas to life.
-            </motion.p>
-            <motion.div variants={fadeInUp}>
-              <Button asChild size="lg" variant="secondary">
-                <Link to="/contact">
-                  Get In Touch <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-            </motion.div>
-          </motion.div>
+      <section className="section-shell mt-28">
+        <SectionIntro
+          badge="Capabilities"
+          title={siteData.home.whatIDo.title}
+          description={siteData.home.whatIDo.description}
+        />
+        <div className="mt-10 grid gap-6 lg:grid-cols-3">
+          {siteData.home.whatIDo.items.map((skill, index) => {
+            const Icon = homeSkillIcons[skill.icon];
+
+            return (
+              <Reveal key={skill.name} delay={index * 0.08}>
+                <div className="group rounded-[30px] border border-black/8 bg-white/75 p-6 shadow-[0_16px_40px_rgba(15,23,42,0.08)] transition-transform duration-300 hover:-translate-y-1 dark:border-white/10 dark:bg-white/[0.04] dark:shadow-none">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500/15 to-violet-500/15 text-sky-700 dark:text-white">
+                    <Icon className="h-6 w-6" />
+                  </div>
+                  <h3 className="mt-6 text-2xl font-semibold tracking-[-0.04em] text-foreground dark:text-white">
+                    {skill.name}
+                  </h3>
+                  <p className="mt-3 leading-7 text-foreground/72 dark:text-slate-300">
+                    {skill.description}
+                  </p>
+                </div>
+              </Reveal>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="section-shell mt-28">
+        <SectionIntro
+          badge="Selected work"
+          title={siteData.home.featuredProjectsSection.title}
+          description={siteData.home.featuredProjectsSection.description}
+        />
+        <div className="mt-10 space-y-6">
+          {featuredProjects.map((project, index) => (
+            <Reveal key={project.id} delay={index * 0.08}>
+              <article className="grid overflow-hidden rounded-[34px] border border-black/8 bg-white/78 shadow-[0_24px_60px_rgba(15,23,42,0.1)] lg:grid-cols-[1.1fr_0.9fr] dark:border-white/10 dark:bg-white/[0.04] dark:shadow-none">
+                <div className="relative min-h-[280px] overflow-hidden border-b border-black/6 lg:min-h-[360px] lg:border-b-0 lg:border-r lg:border-black/6 dark:border-white/8">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="h-full w-full object-cover transition-transform duration-500 hover:scale-[1.03]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-slate-950/55 via-transparent to-transparent dark:from-slate-950/80 dark:via-slate-950/15" />
+                </div>
+                <div className="p-6 sm:p-8">
+                  <div className="flex items-center justify-between gap-4">
+                    <Badge className="rounded-full bg-sky-500/10 px-3 py-1 text-sky-700 dark:text-sky-200">
+                      {project.category}
+                    </Badge>
+                    <div className="flex gap-2">
+                      <Button variant="ghost" size="icon" asChild>
+                        <a href={project.github} target="_blank" rel="noopener noreferrer">
+                          <Github className="h-4 w-4" />
+                        </a>
+                      </Button>
+                      <Button variant="ghost" size="icon" asChild>
+                        <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="h-4 w-4" />
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                  <h3 className="mt-6 text-3xl font-semibold tracking-[-0.05em] text-foreground dark:text-white">
+                    {project.title}
+                  </h3>
+                  <p className="mt-4 text-base leading-7 text-foreground/72 dark:text-slate-300">
+                    {project.longDescription}
+                  </p>
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <Badge
+                        key={tag}
+                        variant="secondary"
+                        className="rounded-full border border-black/6 bg-black/[0.03] px-3 py-1 text-foreground/75 dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-200"
+                      >
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            </Reveal>
+          ))}
         </div>
       </section>
     </div>
