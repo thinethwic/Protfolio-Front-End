@@ -78,12 +78,12 @@ export interface ServiceItem {
   title: string;
   description: string;
   icon:
-    | "code"
-    | "palette"
-    | "server"
-    | "rocket"
-    | "database"
-    | "briefcase";
+  | "code"
+  | "palette"
+  | "server"
+  | "rocket"
+  | "database"
+  | "briefcase";
   deliverables: string[];
   technologies: string[];
 }
@@ -473,6 +473,31 @@ export const siteData = {
     },
     {
       id: 4,
+      title: "GiftBloom - Application",
+      description:
+        "A personalised birthday gift discovery app that helps users find, curate, and send thoughtful gifts with custom messages and smart occasion reminders.",
+      longDescription:
+        "Designed and developed GiftBloom, a full-stack personalised birthday gift application that transforms the gift-giving experience. Features include a smart gift discovery engine with curated recommendations based on recipient interests, age, and relationship type, a wishlist and favourites system for saving gift ideas, and custom gift message builder with themed templates. Users can set birthday reminders and receive timely notifications so they never miss an important occasion. The platform offers a seamless checkout flow with order tracking, and an admin dashboard for managing gift listings, categories, and orders. Secured with JWT-based authentication with distinct User and Admin roles across frontend and backend. Deployed live on Netlify.",
+      image: "https://storage.googleapis.com/portfolio_thineth/Gift%20Bloom.png",
+      tags: ["React", "TypeScript", "Java Spring Boot", "PostgreSQL"],
+      category: "Full-Stack",
+      github: "",
+      demo: "https://giftbirthday03.netlify.app",
+      features: [
+        "Smart gift discovery with personalised recommendations based on interests and relationship type",
+        "Custom gift message builder with themed birthday templates",
+        "Wishlist and favourites system for saving and organising gift ideas",
+        "Birthday reminder system with timely occasion notifications",
+        "Deployed live on Netlify",
+      ],
+      technologies: {
+        frontend: ["React", "TypeScript", "Vite", "Tailwind CSS", "Shadcn UI"],
+        backend: [],
+        tools: [],
+      },
+    },
+    {
+      id: 5,
       title: "UniMind AI Web Application",
       description:
         "A MERN stack MVP leveraging GPT-3.5 Turbo for intelligent content generation and AI-driven interactions.",
@@ -497,7 +522,7 @@ export const siteData = {
       },
     },
     {
-      id: 5,
+      id: 6,
       title: "Hirely AI Smart Hire Portal",
       description:
         "A MERN stack MVP that streamlines hiring processes using OpenAI GPT-3.5 Turbo.",
@@ -522,7 +547,7 @@ export const siteData = {
       },
     },
     {
-      id: 6,
+      id: 7,
       title: "BeanStack - Coffee Shop",
       description:
         "A fully functional responsive website for a fictional coffee shop",
