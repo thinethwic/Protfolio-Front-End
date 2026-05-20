@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router";
 
 const ROUTE_TITLES: Record<string, string> = {
-    "/": "Home",
+    "/": "Full-Stack Engineer",  // ← updated
     "/about": "About Me",
     "/projects": "Projects",
     "/skills": "Skills",
@@ -11,7 +11,7 @@ const ROUTE_TITLES: Record<string, string> = {
     "/services": "Services",
 };
 
-const APP_NAME = "Thineth Wick";
+const APP_NAME = "Thineth Wic";  // ← fixed spelling (was "Wick")
 
 export function usePageTitle() {
     const { pathname } = useLocation();
